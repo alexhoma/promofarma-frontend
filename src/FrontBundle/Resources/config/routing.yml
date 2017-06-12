@@ -4,3 +4,10 @@
 home:
     path:     /
     defaults: { _controller: FrontBundle:Home:index }
+
+#
+# Search
+#
+search:
+    path:     /search
+    defaults: { _controller: FrontBundle:Search:index }

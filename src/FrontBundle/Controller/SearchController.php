@@ -6,17 +6,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 
-class HomeController extends Controller
+class SearchController extends Controller
 {
     /**
-     * Shows The home page
+     * Shows The Search topic page
      *
+     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         return $this->render(
-            'FrontBundle::home.html.twig'
+            'FrontBundle::search.html.twig'
         );
     }
 }

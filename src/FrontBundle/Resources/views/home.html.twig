@@ -1,11 +1,8 @@
-{% extends 'FrontBundle::base.html.twig' %}
+{% extends 'FrontBundle::layout/default.html.twig' %}
+
+{% block title %}Promofarma Trends | Home{% endblock %}
 
 {% block body %}
-<div class="field has-addons">
-    <p class="control is-expanded">
-        <input class="input" type="text" placeholder="Find a repository">
-    </p>
-</div>
 <div class="columns">
     <div class="column">
         {% include 'FrontBundle::includes/card.html.twig' %}

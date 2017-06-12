@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        {% include 'FrontBundle::includes/head.html.twig' %}
+    </head>
+    <body>
+        {% include 'FrontBundle::includes/header.html.twig' %}
+        {% include 'FrontBundle::includes/hero.html.twig' %}
+
+        <section class="section">
+            <div class="container">
+                {% block body %}{% endblock %}
+            </div>
+        </section>
+
+        {% include 'FrontBundle::includes/footer.html.twig' %}
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
