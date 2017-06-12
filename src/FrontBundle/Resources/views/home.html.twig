@@ -1,0 +1,20 @@
+{% extends 'FrontBundle::base.html.twig' %}
+
+{% block body %}
+<div class="field has-addons">
+    <p class="control is-expanded">
+        <input class="input" type="text" placeholder="Find a repository">
+    </p>
+</div>
+<div class="columns">
+    <div class="column">
+        {% include 'FrontBundle::includes/card.html.twig' %}
+    </div>
+    <div class="column">
+        {% include 'FrontBundle::includes/card.html.twig' %}
+    </div>
+    <div class="column">
+        {% include 'FrontBundle::includes/card.html.twig' %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+#
+# Home
+#
+home:
+    path:     /
+    defaults: { _controller: FrontBundle:Home:index }

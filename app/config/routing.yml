@@ -1,0 +1,2 @@
+app:
+    resource: '@FrontBundle/Resources/config/routing.yml'
