@@ -1,5 +1,5 @@
 /*! PROMOFARMA CUSTOM CSS */
-/* Bulma css modular import */
+/** Bulma css modular import */
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -4298,5 +4298,21 @@ label.panel-block {
 .footer {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
+
+/** Custom css */
+#react-search-engine span {
+  color: white; }
+#react-search-engine .input.is-large {
+  background: rgba(0, 0, 0, 0.07);
+  border: none;
+  text-align: center;
+  color: white; }
+
+::-webkit-input-placeholder {
+  color: white; }
+
+::-moz-placeholder {
+  color: white;
+  opacity: 1; }
 
 /*# sourceMappingURL=styles.css.map */

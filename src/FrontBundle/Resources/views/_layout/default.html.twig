@@ -11,7 +11,7 @@
         <!-- Hero -->
         <section class="hero is-success is-bold">
             <div class="hero-body">
-                <div class="container">
+                <div class="container has-text-centered">
                     <h1 class="title">{% block hero_title %}{% endblock %}</h1>
                     <h2 class="subtitle">{% block hero_subtitle %}{% endblock %}</h2>
                 </div>
@@ -24,8 +24,6 @@
                 {% block body %}{% endblock %}
             </div>
         </section>
-
-        {% include 'FrontBundle::_includes/footer.html.twig' %}
 
         {% block javascripts %}
             <script src="{{ asset('bundles/front/js/app.min.js') }}"></script>

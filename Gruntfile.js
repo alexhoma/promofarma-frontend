@@ -2,17 +2,12 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         browserify: {
-            bundle: {
+            dist: {
                 options: {
-                    transform: [
-                        ['babelify', {
-                            presets: ['es2015', 'react']
-                        }]
-                    ]
+                   transform: [['babelify', {presets: ['es2015', 'react']}]]
                 },
-                files: {
-                    'src/FrontBundle/Resources/public/js/app.js': ['src/FrontBundle/Resources/assets/js/**/*.js'],
-                }
+                src: ['src/FrontBundle/Resources/assets/js/**/*.js'],
+                dest: 'src/FrontBundle/Resources/public/js/app.js',
             }
         },
         uglify: {
@@ -51,7 +46,7 @@ module.exports = function (grunt) {
         watch: {
             scripts: {
                 files: ['src/FrontBundle/Resources/assets/js/**/*.js'],
-                tasks: ['browserify:bundle', 'uglify:build'],
+                tasks: ['browserify', 'uglify:build'],
                 options: {
                     spawn: false,
                 }
