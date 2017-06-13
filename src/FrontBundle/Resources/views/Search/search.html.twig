@@ -1,14 +1,12 @@
-{% extends 'FrontBundle::layout/default.html.twig' %}
+{% extends 'FrontBundle::_layout/default.html.twig' %}
 
 {% block title %}Promofarma Trends | search{% endblock %}
 
+{% block hero_title %}
+    <input class="input is-large" type="text" placeholder="Search a topic">
+{% endblock %}
+
 {% block body %}
-    <div class="field has-addons">
-        <p class="control is-expanded">
-            <input class="input" type="text" placeholder="Type a topic to search and hit Enter.">
-        </p>
-    </div>
-    <br>
     <div class="box">
         <article class="media">
             <div class="media-content">

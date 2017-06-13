@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        {% include 'FrontBundle::_includes/head.html.twig' %}
+    </head>
+    <body>
+        {% include 'FrontBundle::_includes/header.html.twig' %}
+
+        <!-- Hero -->
+        <section class="hero is-success is-bold">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">{% block hero_title %}{% endblock %}</h1>
+                    <h2 class="subtitle">{% block hero_subtitle %}{% endblock %}</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main section -->
+        <section class="section">
+            <div class="container">
+                {% block body %}{% endblock %}
+            </div>
+        </section>
+
+        {% include 'FrontBundle::_includes/footer.html.twig' %}
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

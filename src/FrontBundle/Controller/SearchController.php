@@ -17,7 +17,7 @@ class SearchController extends Controller
     public function indexAction(Request $request)
     {
         return $this->render(
-            'FrontBundle::search.html.twig'
+            'FrontBundle::Search/search.html.twig'
         );
     }
 }

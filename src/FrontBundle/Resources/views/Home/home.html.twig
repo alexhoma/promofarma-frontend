@@ -1,0 +1,20 @@
+{% extends 'FrontBundle::_layout/default.html.twig' %}
+
+{% block title %}Promofarma Trends | Home{% endblock %}
+
+{% block hero_title %}Promofarma Trends{% endblock %}
+
+
+{% block body %}
+<div class="columns">
+    <div class="column">
+        {% include 'FrontBundle::_includes/card.html.twig' %}
+    </div>
+    <div class="column">
+        {% include 'FrontBundle::_includes/card.html.twig' %}
+    </div>
+    <div class="column">
+        {% include 'FrontBundle::_includes/card.html.twig' %}
+    </div>
+</div>
+{% endblock %}
