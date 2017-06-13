@@ -1,0 +1,33 @@
+{% extends 'FrontBundle::_layout/default.html.twig' %}
+
+{% block title %}Promofarma Trends | search{% endblock %}
+
+{% block hero_title %}
+    <div class="field">
+        <p class="control has-icons-left has-icons-right">
+            <input class="input is-large" type="text"
+                   placeholder="Search a topic">
+            <span class="icon is-left">
+              <i class="fa fa-search"></i>
+            </span>
+        </p>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <article class="media">
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong>Result box</strong>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Aenean efficitur sit amet massa fringilla egestas.
+                        Nullam condimentum luctus turpis.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
+{% endblock %}
