@@ -10,6 +10,15 @@ module.exports = function (grunt) {
                 },
                 src: ['src/FrontBundle/Resources/assets/js/**/*.js'],
                 dest: 'src/FrontBundle/Resources/public/js/app.js',
+            },
+            dev: {
+                options: {
+                   transform: [
+                       ['babelify', {presets: ['es2015', 'react']}]
+                   ]
+                },
+                src: ['src/FrontBundle/Resources/assets/js/**/*.js'],
+                dest: 'web/bundles/front/js/app.min.js',
             }
         },
         uglify: {
@@ -20,8 +29,6 @@ module.exports = function (grunt) {
             build: {
                 files: {
                     'src/FrontBundle/Resources/public/js/app.min.js':
-                    ['src/FrontBundle/Resources/public/js/app.js'],
-                    'web/bundles/front/js/app.min.js':
                     ['src/FrontBundle/Resources/public/js/app.js'],
                 }
             }

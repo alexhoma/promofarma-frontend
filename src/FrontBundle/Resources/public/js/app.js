@@ -22944,77 +22944,15 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Hero = function (_React$Component) {
-    _inherits(Hero, _React$Component);
-
-    function Hero() {
-        _classCallCheck(this, Hero);
-
-        return _possibleConstructorReturn(this, (Hero.__proto__ || Object.getPrototypeOf(Hero)).apply(this, arguments));
-    }
-
-    _createClass(Hero, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "section",
-                { className: "hero is-success is-bold" },
-                _react2.default.createElement(
-                    "div",
-                    { className: "hero-body" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "container has-text-centered" },
-                        _react2.default.createElement(
-                            "h1",
-                            { className: "title" },
-                            this.props.title
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Hero;
-}(_react2.default.Component);
-
-exports.default = Hero;
-
-},{"react":218}],220:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Common = require('../Common');
-
-var _Common2 = _interopRequireDefault(_Common);
-
-var _MostSpokenTopicsList = require('./MostSpokenTopicsList');
+var _MostSpokenTopicsList = require("./MostSpokenTopicsList");
 
 var _MostSpokenTopicsList2 = _interopRequireDefault(_MostSpokenTopicsList);
 
-var _LatestPost = require('./LatestPost');
+var _LatestPost = require("./LatestPost");
 
 var _LatestPost2 = _interopRequireDefault(_LatestPost);
 
-var _MostRatedTopicsList = require('./MostRatedTopicsList');
+var _MostRatedTopicsList = require("./MostRatedTopicsList");
 
 var _MostRatedTopicsList2 = _interopRequireDefault(_MostRatedTopicsList);
 
@@ -23036,34 +22974,50 @@ var InsightsPage = function (_React$Component) {
     }
 
     _createClass(InsightsPage, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'section',
-                { className: 'InsightsPage' },
-                _react2.default.createElement(_Common2.default, { title: 'Promofarma Trends' }),
+                "section",
+                { className: "InsightsPage" },
                 _react2.default.createElement(
-                    'section',
-                    { className: 'section' },
+                    "section",
+                    { className: "hero is-success is-bold" },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'container' },
+                        "div",
+                        { className: "hero-body" },
                         _react2.default.createElement(
-                            'div',
-                            { className: 'columns' },
+                            "div",
+                            { className: "container has-text-centered" },
                             _react2.default.createElement(
-                                'div',
-                                { className: 'column' },
+                                "h1",
+                                { className: "title" },
+                                "Promofarma Trends"
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    "section",
+                    { className: "section" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "container" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "columns" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "column" },
                                 _react2.default.createElement(_MostSpokenTopicsList2.default, null)
                             ),
                             _react2.default.createElement(
-                                'div',
-                                { className: 'column' },
+                                "div",
+                                { className: "column" },
                                 _react2.default.createElement(_MostRatedTopicsList2.default, null)
                             ),
                             _react2.default.createElement(
-                                'div',
-                                { className: 'column' },
+                                "div",
+                                { className: "column" },
                                 _react2.default.createElement(_LatestPost2.default, null)
                             )
                         )
@@ -23078,7 +23032,7 @@ var InsightsPage = function (_React$Component) {
 
 exports.default = InsightsPage;
 
-},{"../Common":219,"./LatestPost":221,"./MostRatedTopicsList":222,"./MostSpokenTopicsList":223,"react":218}],221:[function(require,module,exports){
+},{"./LatestPost":220,"./MostRatedTopicsList":221,"./MostSpokenTopicsList":222,"react":218}],220:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23161,7 +23115,7 @@ var LatestPost = function (_React$Component) {
 
 exports.default = LatestPost;
 
-},{"react":218}],222:[function(require,module,exports){
+},{"react":218}],221:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23281,7 +23235,7 @@ var MostRatedTopicsList = function (_React$Component) {
 
 exports.default = MostRatedTopicsList;
 
-},{"react":218,"react-trend":191}],223:[function(require,module,exports){
+},{"react":218,"react-trend":191}],222:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23401,7 +23355,7 @@ var MostSpokenTopicsList = function (_React$Component) {
 
 exports.default = MostSpokenTopicsList;
 
-},{"react":218,"react-trend":191}],224:[function(require,module,exports){
+},{"react":218,"react-trend":191}],223:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23451,7 +23405,7 @@ var Main = function (_React$Component) {
 
 exports.default = Main;
 
-},{"react":218}],225:[function(require,module,exports){
+},{"react":218}],224:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23481,15 +23435,14 @@ var BASE_URL = 'http://demo1293283.mockable.io';
 var Input = function (_React$Component) {
     _inherits(Input, _React$Component);
 
-    function Input() {
+    function Input(props) {
         _classCallCheck(this, Input);
 
-        var _this = _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this));
+        var _this = _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this, props));
 
         _this.handleChange = _this.handleChange.bind(_this);
         _this.state = {
-            value: '',
-            dataSource: []
+            value: ''
         };
         return _this;
     }
@@ -23508,21 +23461,14 @@ var Input = function (_React$Component) {
     }, {
         key: 'performSearch',
         value: function performSearch() {
-            var self = this,
-                url = BASE_URL + '/data';
+            var self = this;
+            var url = BASE_URL + '/data';
 
             if (this.state.value !== '') {
                 _axios2.default.get(url).then(function (response) {
-                    self.setState({
-                        dataSource: response.data.msg
-                    });
+                    self.props.onSearchAction(response.data.msg);
                 });
             }
-        }
-    }, {
-        key: 'getRawMarkup',
-        value: function getRawMarkup() {
-            return { __html: this.state.dataSource };
         }
     }, {
         key: 'render',
@@ -23541,8 +23487,7 @@ var Input = function (_React$Component) {
                         { className: 'icon is-left' },
                         _react2.default.createElement('i', { className: 'fa fa-search' })
                     )
-                ),
-                _react2.default.createElement('div', { dangerouslySetInnerHTML: this.getRawMarkup() })
+                )
             );
         }
     }]);
@@ -23552,7 +23497,7 @@ var Input = function (_React$Component) {
 
 exports.default = Input;
 
-},{"axios":1,"react":218}],226:[function(require,module,exports){
+},{"axios":1,"react":218}],225:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23620,8 +23565,8 @@ var Result = function (_React$Component) {
 
 exports.default = Result;
 
-},{"react":218}],227:[function(require,module,exports){
-'use strict';
+},{"react":218}],226:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -23629,19 +23574,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Common = require('../Common');
-
-var _Common2 = _interopRequireDefault(_Common);
-
-var _Input = require('./Input');
+var _Input = require("./Input");
 
 var _Input2 = _interopRequireDefault(_Input);
 
-var _Result = require('./Result');
+var _Result = require("./Result");
 
 var _Result2 = _interopRequireDefault(_Result);
 
@@ -23659,25 +23600,61 @@ var SearchPage = function (_React$Component) {
     function SearchPage() {
         _classCallCheck(this, SearchPage);
 
-        return _possibleConstructorReturn(this, (SearchPage.__proto__ || Object.getPrototypeOf(SearchPage)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (SearchPage.__proto__ || Object.getPrototypeOf(SearchPage)).call(this));
+
+        _this.handleSearchResponse = _this.handleSearchResponse.bind(_this);
+        _this.state = {
+            dataResponse: []
+        };
+        return _this;
     }
 
     _createClass(SearchPage, [{
-        key: 'render',
+        key: "handleSearchResponse",
+        value: function handleSearchResponse(response) {
+            console.log(response);
+            this.setState({
+                dataResponse: response
+            });
+        }
+    }, {
+        key: "getRawMarkup",
+        value: function getRawMarkup() {
+            return { __html: this.state.dataResponse };
+        }
+    }, {
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'section',
-                { className: 'SearchPage' },
-                _react2.default.createElement(_Common2.default, { title: _react2.default.createElement(_Input2.default, null) }),
+                "section",
+                { className: "SearchPage" },
                 _react2.default.createElement(
-                    'section',
-                    { className: 'section' },
+                    "section",
+                    { className: "hero is-success is-bold" },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'container' },
+                        "div",
+                        { className: "hero-body" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "container has-text-centered" },
+                            _react2.default.createElement(
+                                "h1",
+                                { className: "title" },
+                                _react2.default.createElement(_Input2.default, { onSearchAction: this.handleSearchResponse })
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    "section",
+                    { className: "section" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "container" },
                         _react2.default.createElement(_Result2.default, null)
                     )
-                )
+                ),
+                _react2.default.createElement("div", { dangerouslySetInnerHTML: this.getRawMarkup() })
             );
         }
     }]);
@@ -23687,7 +23664,7 @@ var SearchPage = function (_React$Component) {
 
 exports.default = SearchPage;
 
-},{"../Common":219,"./Input":225,"./Result":226,"react":218}],228:[function(require,module,exports){
+},{"./Input":224,"./Result":225,"react":218}],227:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -23737,4 +23714,4 @@ if (null !== document.getElementById('react-page-search')) {
     ), document.getElementById('react-page-search'));
 }
 
-},{"./Insights/InsightsPage":220,"./Main":224,"./Search/SearchPage":227,"react":218,"react-dom":58}]},{},[219,228,220,221,222,223,224,225,226,227]);
+},{"./Insights/InsightsPage":219,"./Main":223,"./Search/SearchPage":226,"react":218,"react-dom":58}]},{},[227,219,220,221,222,223,224,225,226]);

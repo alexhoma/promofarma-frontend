@@ -4,12 +4,11 @@ import axios from 'axios';
 const BASE_URL = 'http://demo1293283.mockable.io';
 
 class Input extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             value: '',
-            dataSource: []
         };
     }
 
@@ -24,20 +23,14 @@ class Input extends React.Component {
     }
 
     performSearch() {
-        const self = this,
-              url = BASE_URL + '/data';
+        const self = this;
+        const url = BASE_URL + '/data';
 
         if(this.state.value !== '') {
             axios.get(url).then(function(response) {
-                self.setState({
-                    dataSource: response.data.msg
-                });
+                self.props.onSearchAction(response.data.msg)
             });
         }
-    }
-
-    getRawMarkup() {
-        return { __html: this.state.dataSource }
     }
 
     render() {
@@ -51,8 +44,6 @@ class Input extends React.Component {
                       <i className="fa fa-search"/>
                     </span>
                 </p>
-
-                <div dangerouslySetInnerHTML={this.getRawMarkup()}/>
             </div>
         );
     }
