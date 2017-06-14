@@ -1,18 +1,43 @@
 import React from 'react';
+import axios from 'axios';
+
+const BASE_URL = 'http://demo1293283.mockable.io';
 
 class Input extends React.Component {
     constructor() {
         super();
         this.handleChange = this.handleChange.bind(this);
-        this.state = {value: ''};
+        this.state = {
+            value: '',
+            dataSource: []
+        };
     }
 
     handleChange(e) {
-        this.setState({value: e.target.value});
+        const self = this;
+
+        this.setState({
+            value: e.target.value
+        }, function() {
+            self.performSearch();
+        });
+    }
+
+    performSearch() {
+        const self = this,
+              url = BASE_URL + '/data';
+
+        if(this.state.value !== '') {
+            axios.get(url).then(function(response) {
+                self.setState({
+                    dataSource: response.data.msg
+                });
+            });
+        }
     }
 
     getRawMarkup() {
-        return { __html: this.state.value }
+        return { __html: this.state.dataSource }
     }
 
     render() {
