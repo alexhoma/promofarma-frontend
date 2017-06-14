@@ -2,21 +2,6 @@
 
 {% block title %}Promofarma Trends | Home{% endblock %}
 
-{% block hero_title %}Promofarma Trends{% endblock %}
-
-
-{% block body %}
-<div class="columns">
-    <div id="app"></div>
-
-    <div class="column">
-        {% include 'FrontBundle::_includes/card.html.twig' %}
-    </div>
-    <div class="column">
-        {% include 'FrontBundle::_includes/card.html.twig' %}
-    </div>
-    <div class="column">
-        {% include 'FrontBundle::_includes/card.html.twig' %}
-    </div>
-</div>
+{% block react %}
+    <div id="react-page-insights"></div>
 {% endblock %}

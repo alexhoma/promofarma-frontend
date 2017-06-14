@@ -6,25 +6,13 @@
         {% include 'FrontBundle::_includes/head.html.twig' %}
     </head>
     <body>
+        <!-- Navigation -->
         {% include 'FrontBundle::_includes/header.html.twig' %}
 
-        <!-- Hero -->
-        <section class="hero is-success is-bold">
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <h1 class="title">{% block hero_title %}{% endblock %}</h1>
-                    <h2 class="subtitle">{% block hero_subtitle %}{% endblock %}</h2>
-                </div>
-            </div>
-        </section>
-
         <!-- Main section -->
-        <section class="section">
-            <div class="container">
-                {% block body %}{% endblock %}
-            </div>
-        </section>
+        {% block react %}{% endblock %}
 
+        <!-- Scripts -->
         {% block javascripts %}
             <script src="{{ asset('bundles/front/js/app.min.js') }}"></script>
         {% endblock %}

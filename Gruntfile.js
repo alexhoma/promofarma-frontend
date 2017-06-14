@@ -17,7 +17,8 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'src/FrontBundle/Resources/public/js/app.min.js': ['src/FrontBundle/Resources/public/js/app.js'],
+                    'src/FrontBundle/Resources/public/js/app.min.js':
+                    ['src/FrontBundle/Resources/public/js/app.js'],
                 }
             }
         },

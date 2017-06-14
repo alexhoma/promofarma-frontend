@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SearchEngine extends React.Component {
+class Input extends React.Component {
     render() {
         return (
             <div className="field">
@@ -8,12 +8,12 @@ class SearchEngine extends React.Component {
                     <input className="input is-large" type="text"
                            placeholder="Search a topic" />
                     <span className="icon is-left">
-                  <i className="fa fa-search"/>
-                </span>
+                      <i className="fa fa-search"/>
+                    </span>
                 </p>
             </div>
         );
     }
 }
 
-export default SearchEngine;
+export default Input;
