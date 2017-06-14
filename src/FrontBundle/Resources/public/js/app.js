@@ -22025,7 +22025,7 @@ var Main = function (_React$Component) {
 exports.default = Main;
 
 },{"react":192}],199:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -22033,7 +22033,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -22051,26 +22051,42 @@ var Input = function (_React$Component) {
     function Input() {
         _classCallCheck(this, Input);
 
-        return _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this));
+
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.state = { value: '' };
+        return _this;
     }
 
     _createClass(Input, [{
-        key: "render",
+        key: 'handleChange',
+        value: function handleChange(e) {
+            this.setState({ value: e.target.value });
+        }
+    }, {
+        key: 'getRawMarkup',
+        value: function getRawMarkup() {
+            return { __html: this.state.value };
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "div",
-                { className: "field" },
+                'div',
+                { className: 'field' },
                 _react2.default.createElement(
-                    "p",
-                    { className: "control has-icons-left has-icons-right" },
-                    _react2.default.createElement("input", { className: "input is-large", type: "text",
-                        placeholder: "Search a topic" }),
+                    'p',
+                    { className: 'control has-icons-left has-icons-right' },
+                    _react2.default.createElement('input', { className: 'input is-large', type: 'text',
+                        placeholder: 'Search a topic',
+                        onChange: this.handleChange }),
                     _react2.default.createElement(
-                        "span",
-                        { className: "icon is-left" },
-                        _react2.default.createElement("i", { className: "fa fa-search" })
+                        'span',
+                        { className: 'icon is-left' },
+                        _react2.default.createElement('i', { className: 'fa fa-search' })
                     )
-                )
+                ),
+                _react2.default.createElement('div', { dangerouslySetInnerHTML: this.getRawMarkup() })
             );
         }
     }]);
