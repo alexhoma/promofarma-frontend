@@ -4300,6 +4300,12 @@ label.panel-block {
   padding: 3rem 1.5rem 6rem; }
 
 /** Custom css */
+/**
+ * Reset css
+ */
+.box {
+  border-radius: 3px; }
+
 .SearchPage span.icon > .fa.fa-search {
   color: white; }
 .SearchPage .input.is-large {
@@ -4314,5 +4320,14 @@ label.panel-block {
 ::-moz-placeholder {
   color: white;
   opacity: 1; }
+
+.InsightsPage .box hr {
+  margin: 0.7rem 0;
+  background-color: #efefef; }
+.InsightsPage .box .content .table tbody > tr {
+  cursor: pointer; }
+.InsightsPage .box .content .table tbody > tr > td {
+  vertical-align: inherit;
+  border: none; }
 
 /*# sourceMappingURL=styles.css.map */
