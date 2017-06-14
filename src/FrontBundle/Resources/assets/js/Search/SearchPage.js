@@ -6,7 +6,7 @@ import Result from "./Result";
 class SearchPage extends React.Component {
     render() {
         return (
-            <section>
+            <section className="SearchPage">
                 {/*Hero with input on it*/}
                 <Hero title={
                     <Input />

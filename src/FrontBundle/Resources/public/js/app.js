@@ -21332,7 +21332,7 @@ var SearchPage = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'section',
-                null,
+                { className: 'SearchPage' },
                 _react2.default.createElement(_Common2.default, { title: _react2.default.createElement(_Input2.default, null) }),
                 _react2.default.createElement(
                     'section',

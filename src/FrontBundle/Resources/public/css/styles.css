@@ -4300,9 +4300,9 @@ label.panel-block {
   padding: 3rem 1.5rem 6rem; }
 
 /** Custom css */
-#react-page-search span {
+.SearchPage span.icon > .fa.fa-search {
   color: white; }
-#react-page-search .input.is-large {
+.SearchPage .input.is-large {
   background: rgba(0, 0, 0, 0.07);
   border: none;
   text-align: center;
