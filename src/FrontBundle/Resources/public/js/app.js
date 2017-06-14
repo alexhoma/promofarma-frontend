@@ -23430,7 +23430,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var BASE_URL = 'http://demo1293283.mockable.io';
+var BASE_URL = 'http://demo6666449.mockable.io';
 
 var Input = function (_React$Component) {
     _inherits(Input, _React$Component);
@@ -23498,7 +23498,7 @@ var Input = function (_React$Component) {
 exports.default = Input;
 
 },{"axios":1,"react":218}],225:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -23506,7 +23506,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -23521,42 +23521,52 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Result = function (_React$Component) {
     _inherits(Result, _React$Component);
 
-    function Result() {
+    function Result(props) {
         _classCallCheck(this, Result);
 
-        return _possibleConstructorReturn(this, (Result.__proto__ || Object.getPrototypeOf(Result)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Result.__proto__ || Object.getPrototypeOf(Result)).call(this, props));
     }
 
     _createClass(Result, [{
-        key: "render",
+        key: 'getRawMarkup',
+        value: function getRawMarkup() {
+            return { __html: this.props.data };
+        }
+    }, {
+        key: 'render',
         value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { className: "box" },
-                _react2.default.createElement(
-                    "article",
-                    { className: "media" },
+            var responseBox = _react2.default.createElement('div', null);
+
+            if (this.props.data !== '') {
+                responseBox = _react2.default.createElement(
+                    'div',
+                    { className: 'box' },
                     _react2.default.createElement(
-                        "div",
-                        { className: "media-content" },
+                        'article',
+                        { className: 'media' },
                         _react2.default.createElement(
-                            "div",
-                            { className: "content" },
+                            'div',
+                            { className: 'media-content' },
                             _react2.default.createElement(
-                                "p",
-                                null,
+                                'div',
+                                { className: 'content' },
                                 _react2.default.createElement(
-                                    "strong",
+                                    'p',
                                     null,
-                                    "Result box"
+                                    _react2.default.createElement(
+                                        'strong',
+                                        null,
+                                        'Result box'
+                                    )
                                 ),
-                                _react2.default.createElement("br", null),
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis."
+                                _react2.default.createElement('p', { dangerouslySetInnerHTML: this.getRawMarkup() })
                             )
                         )
                     )
-                )
-            );
+                );
+            }
+
+            return responseBox;
         }
     }]);
 
@@ -23604,7 +23614,7 @@ var SearchPage = function (_React$Component) {
 
         _this.handleSearchResponse = _this.handleSearchResponse.bind(_this);
         _this.state = {
-            dataResponse: []
+            dataResponse: ''
         };
         return _this;
     }
@@ -23616,11 +23626,6 @@ var SearchPage = function (_React$Component) {
             this.setState({
                 dataResponse: response
             });
-        }
-    }, {
-        key: "getRawMarkup",
-        value: function getRawMarkup() {
-            return { __html: this.state.dataResponse };
         }
     }, {
         key: "render",
@@ -23651,10 +23656,9 @@ var SearchPage = function (_React$Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "container" },
-                        _react2.default.createElement(_Result2.default, null)
+                        _react2.default.createElement(_Result2.default, { data: this.state.dataResponse })
                     )
-                ),
-                _react2.default.createElement("div", { dangerouslySetInnerHTML: this.getRawMarkup() })
+                )
             );
         }
     }]);

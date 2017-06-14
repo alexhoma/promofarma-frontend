@@ -7,7 +7,7 @@ class SearchPage extends React.Component {
         super();
         this.handleSearchResponse = this.handleSearchResponse.bind(this);
         this.state = {
-            dataResponse: []
+            dataResponse: ''
         };
     }
 
@@ -16,10 +16,6 @@ class SearchPage extends React.Component {
         this.setState({
             dataResponse: response
         });
-    }
-
-    getRawMarkup() {
-        return { __html: this.state.dataResponse }
     }
 
     render() {
@@ -39,11 +35,9 @@ class SearchPage extends React.Component {
                 {/*Result section*/}
                 <section className="section">
                     <div className="container">
-                        <Result />
+                        <Result data={this.state.dataResponse} />
                     </div>
                 </section>
-
-                <div dangerouslySetInnerHTML={this.getRawMarkup()}/>
             </section>
         );
     }

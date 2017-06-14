@@ -1,24 +1,33 @@
 import React from 'react';
 
 class Result extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    getRawMarkup() {
+        return { __html: this.props.data }
+    }
+
     render() {
-        return (
-            <div className="box">
-                <article className="media">
-                    <div className="media-content">
-                        <div className="content">
-                            <p>
-                                <strong>Result box</strong>
-                                <br />
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Aenean efficitur sit amet massa fringilla egestas.
-                                Nullam condimentum luctus turpis.
-                            </p>
+        let responseBox = <div />;
+
+        if (this.props.data !== '') {
+            responseBox = (
+                <div className="box">
+                    <article className="media">
+                        <div className="media-content">
+                            <div className="content">
+                                <p><strong>Result box</strong></p>
+                                <p dangerouslySetInnerHTML={this.getRawMarkup()} />
+                            </div>
                         </div>
-                    </div>
-                </article>
-            </div>
-        );
+                    </article>
+                </div>
+            );
+        }
+
+        return responseBox;
     }
 }
 
