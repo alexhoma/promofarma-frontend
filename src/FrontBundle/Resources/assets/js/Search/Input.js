@@ -23,7 +23,7 @@ class Input extends React.Component {
 
     performSearch() {
         const self = this;
-        const url = BASE_URL + '/data';
+        const url = BASE_URL + '/search-data';
 
         if(this.state.value !== '') {
             axios.get(url).then(function(response) {

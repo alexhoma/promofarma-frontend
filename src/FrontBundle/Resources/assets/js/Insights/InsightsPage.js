@@ -10,25 +10,41 @@ class InsightsPage extends React.Component {
         super();
         this.fetchData = this.fetchData.bind(this);
         this.state = {
-            mostSpokenTopics: '',
-            mostRatedTopics: '',
-            latestPost: '',
+            mostSpokenTopics: [],
+            mostRatedTopics: [],
+            latestPost: {
+                'created_at':'',
+                'source': '',
+                'content': ''
+            },
         };
     }
 
     fetchData() {
+        const self = this;
         axios.all([
-            axios.get(BASE_URL + '/data'),
-            axios.get(BASE_URL + '/data'),
-            axios.get(BASE_URL + '/data')
+            axios.get(BASE_URL + '/most-spoken-topics'),
+            axios.get(BASE_URL + '/most-rated-topics'),
+            axios.get(BASE_URL + '/latest-post')
         ])
-        .then(axios.spread(function (acct, perms) {
-            console.log(acct, perms)
+        .then(axios.spread(function (
+            mostSpokenTopicsResponse,
+            mostRatedTopicsResponse,
+            latestPostTopics
+        ) {
+            self.setState({
+                'mostSpokenTopics': mostSpokenTopicsResponse.data,
+                'mostRatedTopics': mostRatedTopicsResponse.data,
+                'latestPost': latestPostTopics.data
+            })
         }));
     }
 
     componentDidMount() {
-        this.interval = setInterval(() => this.fetchData(), 5000);
+        this.fetchData();
+        // this.interval = setInterval(
+        //     () => this.fetchData(), 10000
+        // );
     }
 
     render() {

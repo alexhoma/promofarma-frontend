@@ -1,11 +1,21 @@
 import React from 'react';
 
 class LatestPost extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     render() {
+        const {
+            content,
+            created_at,
+            source
+        } = this.props.data;
+
+        if (content === '') {
+            return false;
+        }
+
         return (
             <div className="box">
                 <article className="media">
@@ -13,12 +23,9 @@ class LatestPost extends React.Component {
                         <div className="content">
                             <strong>Latest Post</strong>
                             <hr />
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. A ab accusamus asperiores
-                            consequatur consequuntur dicta eos
-                            exercitationem facere facilis.</p>
-                            <small className="is-primary">Posted 31m ago · </small>
-                            <small>Source: <a href="#">twitter.com</a></small>
+                            <p>{content}</p>
+                            <small className="is-primary">{created_at} · </small>
+                            <small>Source: <a href="#">{source}</a></small>
                         </div>
                     </div>
                 </article>

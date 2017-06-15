@@ -22980,9 +22980,13 @@ var InsightsPage = function (_React$Component) {
 
         _this.fetchData = _this.fetchData.bind(_this);
         _this.state = {
-            mostSpokenTopics: '',
-            mostRatedTopics: '',
-            latestPost: ''
+            mostSpokenTopics: [],
+            mostRatedTopics: [],
+            latestPost: {
+                'created_at': '',
+                'source': '',
+                'content': ''
+            }
         };
         return _this;
     }
@@ -22990,18 +22994,22 @@ var InsightsPage = function (_React$Component) {
     _createClass(InsightsPage, [{
         key: "fetchData",
         value: function fetchData() {
-            _axios2.default.all([_axios2.default.get(_config.BASE_URL + '/data'), _axios2.default.get(_config.BASE_URL + '/data'), _axios2.default.get(_config.BASE_URL + '/data')]).then(_axios2.default.spread(function (acct, perms) {
-                console.log(acct, perms);
+            var self = this;
+            _axios2.default.all([_axios2.default.get(_config.BASE_URL + '/most-spoken-topics'), _axios2.default.get(_config.BASE_URL + '/most-rated-topics'), _axios2.default.get(_config.BASE_URL + '/latest-post')]).then(_axios2.default.spread(function (mostSpokenTopicsResponse, mostRatedTopicsResponse, latestPostTopics) {
+                self.setState({
+                    'mostSpokenTopics': mostSpokenTopicsResponse.data,
+                    'mostRatedTopics': mostRatedTopicsResponse.data,
+                    'latestPost': latestPostTopics.data
+                });
             }));
         }
     }, {
         key: "componentDidMount",
         value: function componentDidMount() {
-            var _this2 = this;
-
-            this.interval = setInterval(function () {
-                return _this2.fetchData();
-            }, 5000);
+            this.fetchData();
+            // this.interval = setInterval(
+            //     () => this.fetchData(), 10000
+            // );
         }
     }, {
         key: "render",
@@ -23069,7 +23077,7 @@ var InsightsPage = function (_React$Component) {
 exports.default = InsightsPage;
 
 },{"../config":227,"./LatestPost":220,"./MostRatedTopicsList":221,"./MostSpokenTopicsList":222,"axios":1,"react":218}],220:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -23077,7 +23085,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -23092,51 +23100,62 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var LatestPost = function (_React$Component) {
     _inherits(LatestPost, _React$Component);
 
-    function LatestPost() {
+    function LatestPost(props) {
         _classCallCheck(this, LatestPost);
 
-        return _possibleConstructorReturn(this, (LatestPost.__proto__ || Object.getPrototypeOf(LatestPost)).call(this));
+        return _possibleConstructorReturn(this, (LatestPost.__proto__ || Object.getPrototypeOf(LatestPost)).call(this, props));
     }
 
     _createClass(LatestPost, [{
-        key: "render",
+        key: 'render',
         value: function render() {
+            var _props$data = this.props.data,
+                content = _props$data.content,
+                created_at = _props$data.created_at,
+                source = _props$data.source;
+
+
+            if (content === '') {
+                return false;
+            }
+
             return _react2.default.createElement(
-                "div",
-                { className: "box" },
+                'div',
+                { className: 'box' },
                 _react2.default.createElement(
-                    "article",
-                    { className: "media" },
+                    'article',
+                    { className: 'media' },
                     _react2.default.createElement(
-                        "div",
-                        { className: "media-content" },
+                        'div',
+                        { className: 'media-content' },
                         _react2.default.createElement(
-                            "div",
-                            { className: "content" },
+                            'div',
+                            { className: 'content' },
                             _react2.default.createElement(
-                                "strong",
+                                'strong',
                                 null,
-                                "Latest Post"
+                                'Latest Post'
                             ),
-                            _react2.default.createElement("hr", null),
+                            _react2.default.createElement('hr', null),
                             _react2.default.createElement(
-                                "p",
+                                'p',
                                 null,
-                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab accusamus asperiores consequatur consequuntur dicta eos exercitationem facere facilis."
-                            ),
-                            _react2.default.createElement(
-                                "small",
-                                { className: "is-primary" },
-                                "Posted 31m ago \xB7 "
+                                content
                             ),
                             _react2.default.createElement(
-                                "small",
+                                'small',
+                                { className: 'is-primary' },
+                                created_at,
+                                ' \xB7 '
+                            ),
+                            _react2.default.createElement(
+                                'small',
                                 null,
-                                "Source: ",
+                                'Source: ',
                                 _react2.default.createElement(
-                                    "a",
-                                    { href: "#" },
-                                    "twitter.com"
+                                    'a',
+                                    { href: '#' },
+                                    source
                                 )
                             )
                         )
@@ -23179,18 +23198,19 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var MostRatedTopicsList = function (_React$Component) {
     _inherits(MostRatedTopicsList, _React$Component);
 
-    function MostRatedTopicsList() {
+    function MostRatedTopicsList(props) {
         _classCallCheck(this, MostRatedTopicsList);
 
-        var _this = _possibleConstructorReturn(this, (MostRatedTopicsList.__proto__ || Object.getPrototypeOf(MostRatedTopicsList)).call(this));
-
-        _this.trends = [{ name: 'Playa', data: [4, 2, 5, 1, 5, 1, 1, 1, 3, 0, 1, 8, 4, 8, 9] }, { name: 'Batidos Detox', data: [4, 9, 3, 1, 3, 0, 1, 1, 1, 0, 1, 0, 4, 4, 4] }, { name: 'Dormir bien', data: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0] }, { name: 'Dejar de fumar', data: [0, 2, 2, 1, 7, 9, 1, 1, 3, 8, 1, 1, 4, 8, 2] }, { name: 'Piel suave', data: [4, 2, 5, 1, 5, 1, 1, 1, 3, 0, 1, 8, 4, 8, 9] }];
-        return _this;
+        return _possibleConstructorReturn(this, (MostRatedTopicsList.__proto__ || Object.getPrototypeOf(MostRatedTopicsList)).call(this, props));
     }
 
     _createClass(MostRatedTopicsList, [{
         key: 'render',
         value: function render() {
+            if (typeof this.props.data.trends === 'undefined') {
+                return false;
+            }
+
             return _react2.default.createElement(
                 'div',
                 { className: 'box' },
@@ -23215,10 +23235,10 @@ var MostRatedTopicsList = function (_React$Component) {
                                 _react2.default.createElement(
                                     'tbody',
                                     null,
-                                    this.trends.map(function (trend, i) {
+                                    this.props.data.trends.map(function (trend, index) {
                                         return _react2.default.createElement(
                                             'tr',
-                                            null,
+                                            { key: index },
                                             _react2.default.createElement(
                                                 'td',
                                                 { width: '60%' },
@@ -23226,7 +23246,7 @@ var MostRatedTopicsList = function (_React$Component) {
                                                     'b',
                                                     null,
                                                     '#',
-                                                    i + 1
+                                                    index + 1
                                                 ),
                                                 ' ',
                                                 trend.name
@@ -23299,18 +23319,19 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var MostSpokenTopicsList = function (_React$Component) {
     _inherits(MostSpokenTopicsList, _React$Component);
 
-    function MostSpokenTopicsList() {
+    function MostSpokenTopicsList(props) {
         _classCallCheck(this, MostSpokenTopicsList);
 
-        var _this = _possibleConstructorReturn(this, (MostSpokenTopicsList.__proto__ || Object.getPrototypeOf(MostSpokenTopicsList)).call(this));
-
-        _this.trends = [{ name: 'Crema Solar', data: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0] }, { name: 'Crema hidratante', data: [4, 2, 5, 1, 5, 1, 1, 1, 3, 0, 1, 8, 4, 8, 9] }, { name: 'Champú piojos', data: [4, 2, 5, 1, 5, 1, 1, 1, 3, 0, 1, 8, 4, 8, 9] }, { name: 'Operación bikini', data: [0, 2, 2, 1, 7, 9, 1, 1, 3, 8, 1, 1, 4, 8, 2] }, { name: 'Vida sana', data: [4, 9, 3, 1, 3, 0, 1, 1, 1, 0, 1, 0, 4, 4, 4] }];
-        return _this;
+        return _possibleConstructorReturn(this, (MostSpokenTopicsList.__proto__ || Object.getPrototypeOf(MostSpokenTopicsList)).call(this, props));
     }
 
     _createClass(MostSpokenTopicsList, [{
         key: 'render',
         value: function render() {
+            if (typeof this.props.data.trends === 'undefined') {
+                return false;
+            }
+
             return _react2.default.createElement(
                 'div',
                 { className: 'box' },
@@ -23335,10 +23356,10 @@ var MostSpokenTopicsList = function (_React$Component) {
                                 _react2.default.createElement(
                                     'tbody',
                                     null,
-                                    this.trends.map(function (trend, i) {
+                                    this.props.data.trends.map(function (trend, index) {
                                         return _react2.default.createElement(
                                             'tr',
-                                            null,
+                                            { key: index },
                                             _react2.default.createElement(
                                                 'td',
                                                 { width: '60%' },
@@ -23346,7 +23367,7 @@ var MostSpokenTopicsList = function (_React$Component) {
                                                     'b',
                                                     null,
                                                     '#',
-                                                    i + 1
+                                                    index + 1
                                                 ),
                                                 ' ',
                                                 trend.name
@@ -23498,7 +23519,7 @@ var Input = function (_React$Component) {
         key: 'performSearch',
         value: function performSearch() {
             var self = this;
-            var url = _config.BASE_URL + '/data';
+            var url = _config.BASE_URL + '/search-data';
 
             if (this.state.value !== '') {
                 _axios2.default.get(url).then(function (response) {
@@ -23715,7 +23736,7 @@ Object.defineProperty(exports, "__esModule", {
  * For global vars and constants
  */
 
-var BASE_URL = exports.BASE_URL = 'http://demo6666449.mockable.io';
+var BASE_URL = exports.BASE_URL = 'http://demo7967671.mockable.io';
 
 },{}],228:[function(require,module,exports){
 'use strict';
