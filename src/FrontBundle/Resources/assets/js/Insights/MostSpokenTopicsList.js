@@ -8,7 +8,11 @@ class MostSpokenTopicsList extends React.Component {
 
     render() {
         if (typeof this.props.data.trends === 'undefined') {
-            return false;
+            return (
+                <div className="box">
+                    <span className="spinner" />
+                </div>
+            );
         }
 
         return (

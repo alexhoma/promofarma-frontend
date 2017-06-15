@@ -23329,7 +23329,11 @@ var MostSpokenTopicsList = function (_React$Component) {
         key: 'render',
         value: function render() {
             if (typeof this.props.data.trends === 'undefined') {
-                return false;
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'box' },
+                    _react2.default.createElement('span', { className: 'spinner' })
+                );
             }
 
             return _react2.default.createElement(
@@ -23475,12 +23479,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = require('axios');
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _config = require('../config');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23499,7 +23497,7 @@ var Input = function (_React$Component) {
 
         _this.handleChange = _this.handleChange.bind(_this);
         _this.state = {
-            value: ''
+            requestValue: ''
         };
         return _this;
     }
@@ -23518,13 +23516,8 @@ var Input = function (_React$Component) {
     }, {
         key: 'performSearch',
         value: function performSearch() {
-            var self = this;
-            var url = _config.BASE_URL + '/search-data';
-
             if (this.state.value !== '') {
-                _axios2.default.get(url).then(function (response) {
-                    self.props.onSearchAction(response.data.msg);
-                });
+                this.props.onSearchAction(this.state.requestValue);
             }
         }
     }, {
@@ -23554,8 +23547,8 @@ var Input = function (_React$Component) {
 
 exports.default = Input;
 
-},{"../config":227,"axios":1,"react":218}],225:[function(require,module,exports){
-'use strict';
+},{"react":218}],225:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -23563,7 +23556,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -23585,38 +23578,50 @@ var Result = function (_React$Component) {
     }
 
     _createClass(Result, [{
-        key: 'getRawMarkup',
+        key: "getRawMarkup",
         value: function getRawMarkup() {
-            return { __html: this.props.data };
+            return { __html: this.props.searchResult.msg };
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
-            var responseBox = _react2.default.createElement('div', null);
+            var responseBox = _react2.default.createElement("div", null);
 
-            if (this.props.data !== '') {
+            if (this.props.fetching === true) {
                 responseBox = _react2.default.createElement(
-                    'div',
-                    { className: 'box' },
+                    "div",
+                    { className: "columns" },
                     _react2.default.createElement(
-                        'article',
-                        { className: 'media' },
+                        "div",
+                        { className: "column" },
+                        _react2.default.createElement("span", { className: "spinner" })
+                    )
+                );
+            }
+
+            if (this.props.searchResult !== '') {
+                responseBox = _react2.default.createElement(
+                    "div",
+                    { className: "box" },
+                    _react2.default.createElement(
+                        "article",
+                        { className: "media" },
                         _react2.default.createElement(
-                            'div',
-                            { className: 'media-content' },
+                            "div",
+                            { className: "media-content" },
                             _react2.default.createElement(
-                                'div',
-                                { className: 'content' },
+                                "div",
+                                { className: "content" },
                                 _react2.default.createElement(
-                                    'p',
+                                    "p",
                                     null,
                                     _react2.default.createElement(
-                                        'strong',
+                                        "strong",
                                         null,
-                                        'Result box'
+                                        "Result box"
                                     )
                                 ),
-                                _react2.default.createElement('p', { dangerouslySetInnerHTML: this.getRawMarkup() })
+                                _react2.default.createElement("p", { dangerouslySetInnerHTML: this.getRawMarkup() })
                             )
                         )
                     )
@@ -23633,7 +23638,7 @@ var Result = function (_React$Component) {
 exports.default = Result;
 
 },{"react":218}],226:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -23641,15 +23646,21 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Input = require("./Input");
+var _axios = require('axios');
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _config = require('../config');
+
+var _Input = require('./Input');
 
 var _Input2 = _interopRequireDefault(_Input);
 
-var _Result = require("./Result");
+var _Result = require('./Result');
 
 var _Result2 = _interopRequireDefault(_Result);
 
@@ -23669,51 +23680,63 @@ var SearchPage = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (SearchPage.__proto__ || Object.getPrototypeOf(SearchPage)).call(this));
 
-        _this.handleSearchResponse = _this.handleSearchResponse.bind(_this);
+        _this.fetchSearchRequest = _this.fetchSearchRequest.bind(_this);
         _this.state = {
+            isFetching: false,
             dataResponse: ''
         };
         return _this;
     }
 
     _createClass(SearchPage, [{
-        key: "handleSearchResponse",
-        value: function handleSearchResponse(response) {
-            console.log(response);
-            this.setState({
-                dataResponse: response
+        key: 'fetchSearchRequest',
+        value: function fetchSearchRequest(requestValue) {
+            var self = this;
+            var url = _config.BASE_URL + '/search-data';
+            self.setState({
+                isFetching: true
+            });
+
+            _axios2.default.get(url).then(function (response) {
+                self.setState({
+                    dataResponse: response.data,
+                    isFetching: false
+                });
             });
         }
     }, {
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "section",
-                { className: "SearchPage" },
+                'section',
+                { className: 'SearchPage' },
                 _react2.default.createElement(
-                    "section",
-                    { className: "hero is-success is-bold" },
+                    'section',
+                    { className: 'hero is-success is-bold' },
                     _react2.default.createElement(
-                        "div",
-                        { className: "hero-body" },
+                        'div',
+                        { className: 'hero-body' },
                         _react2.default.createElement(
-                            "div",
-                            { className: "container has-text-centered" },
+                            'div',
+                            { className: 'container has-text-centered' },
                             _react2.default.createElement(
-                                "h1",
-                                { className: "title" },
-                                _react2.default.createElement(_Input2.default, { onSearchAction: this.handleSearchResponse })
+                                'h1',
+                                { className: 'title' },
+                                _react2.default.createElement(_Input2.default, { onSearchAction: this.fetchSearchRequest })
                             )
                         )
                     )
                 ),
                 _react2.default.createElement(
-                    "section",
-                    { className: "section" },
+                    'section',
+                    { className: 'section' },
                     _react2.default.createElement(
-                        "div",
-                        { className: "container" },
-                        _react2.default.createElement(_Result2.default, { data: this.state.dataResponse })
+                        'div',
+                        { className: 'container' },
+                        _react2.default.createElement(_Result2.default, {
+                            searchResult: this.state.dataResponse,
+                            fetching: this.state.isFetching
+                        })
                     )
                 )
             );
@@ -23725,7 +23748,7 @@ var SearchPage = function (_React$Component) {
 
 exports.default = SearchPage;
 
-},{"./Input":224,"./Result":225,"react":218}],227:[function(require,module,exports){
+},{"../config":227,"./Input":224,"./Result":225,"axios":1,"react":218}],227:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23788,4 +23811,4 @@ if (null !== document.getElementById('react-page-search')) {
     ), document.getElementById('react-page-search'));
 }
 
-},{"./Insights/InsightsPage":219,"./Main":223,"./Search/SearchPage":226,"react":218,"react-dom":58}]},{},[227,228,219,220,221,222,223,224,225,226]);
+},{"./Insights/InsightsPage":219,"./Main":223,"./Search/SearchPage":226,"react":218,"react-dom":58}]},{},[219,220,221,222,223,224,225,226,227,228]);

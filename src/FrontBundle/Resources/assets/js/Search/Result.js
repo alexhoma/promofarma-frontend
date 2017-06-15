@@ -6,13 +6,23 @@ class Result extends React.Component {
     }
 
     getRawMarkup() {
-        return { __html: this.props.data }
+        return { __html: this.props.searchResult.msg }
     }
 
     render() {
-        let responseBox = <div />;
+        let responseBox = <div/>;
 
-        if (this.props.data !== '') {
+        if (this.props.fetching === true) {
+            responseBox = (
+                <div className="columns">
+                    <div className="column">
+                        <span className="spinner" />
+                    </div>
+                </div>
+            );
+        }
+
+        if (this.props.searchResult !== '') {
             responseBox = (
                 <div className="box">
                     <article className="media">

@@ -1,13 +1,11 @@
 import React from 'react';
-import axios from 'axios';
-import { BASE_URL } from '../config';
 
 class Input extends React.Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
         this.state = {
-            value: '',
+            requestValue: '',
         };
     }
 
@@ -22,13 +20,8 @@ class Input extends React.Component {
     }
 
     performSearch() {
-        const self = this;
-        const url = BASE_URL + '/search-data';
-
         if(this.state.value !== '') {
-            axios.get(url).then(function(response) {
-                self.props.onSearchAction(response.data.msg)
-            });
+            this.props.onSearchAction(this.state.requestValue);
         }
     }
 
