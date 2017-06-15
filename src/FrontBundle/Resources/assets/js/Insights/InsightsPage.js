@@ -10,6 +10,7 @@ class InsightsPage extends React.Component {
         super();
         this.fetchData = this.fetchData.bind(this);
         this.state = {
+            isFetching: true,
             mostSpokenTopics: [],
             mostRatedTopics: [],
             latestPost: {
@@ -22,17 +23,19 @@ class InsightsPage extends React.Component {
 
     fetchData() {
         const self = this;
+
         axios.all([
             axios.get(BASE_URL + '/most-spoken-topics'),
             axios.get(BASE_URL + '/most-rated-topics'),
             axios.get(BASE_URL + '/latest-post')
         ])
-        .then(axios.spread(function (
+        .then(axios.spread( (
             mostSpokenTopicsResponse,
             mostRatedTopicsResponse,
             latestPostTopics
-        ) {
+        ) => {
             self.setState({
+                'isFetching': false,
                 'mostSpokenTopics': mostSpokenTopicsResponse.data,
                 'mostRatedTopics': mostRatedTopicsResponse.data,
                 'latestPost': latestPostTopics.data
@@ -42,24 +45,46 @@ class InsightsPage extends React.Component {
 
     componentDidMount() {
         this.fetchData();
-        // this.interval = setInterval(
-        //     () => this.fetchData(), 10000
-        // );
+        this.interval = setInterval(
+            () => this.fetchData(), 10000
+        );
     }
 
     render() {
+        let hero = (
+            <header className="hero is-success is-bold">
+                <div className="hero-body">
+                    <div className="container has-text-centered">
+                        <h1 className="title">
+                            Promofarma Trends
+                        </h1>
+                    </div>
+                </div>
+            </header>
+        );
+
+        if (this.state.isFetching === true) {
+            return (
+                <section className="InsightsPage">
+                    {hero}
+                    {/*Result section*/}
+                    <section className="section">
+                        <div className="container">
+                            <div className="columns">
+                                <div className="column">
+                                    <span className="spinner" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            )
+        }
+
         return (
             <section className="InsightsPage">
                 {/*Hero with input on it*/}
-                <section className="hero is-success is-bold">
-                    <div className="hero-body">
-                        <div className="container has-text-centered">
-                            <h1 className="title">
-                                Promofarma Trends
-                            </h1>
-                        </div>
-                    </div>
-                </section>
+                {hero}
 
                 {/*Result section*/}
                 <section className="section">

@@ -14,7 +14,7 @@ class SearchPage extends React.Component {
         };
     }
 
-    fetchSearchRequest(requestValue) {
+    fetchSearchRequest() {
         const self = this;
         const url = BASE_URL + '/search-data';
         self.setState({
@@ -33,7 +33,7 @@ class SearchPage extends React.Component {
         return (
             <section className="SearchPage">
                 {/*Hero with input on it*/}
-                <section className="hero is-success is-bold">
+                <header className="hero is-success is-bold">
                     <div className="hero-body">
                         <div className="container has-text-centered">
                             <h1 className="title">
@@ -41,7 +41,7 @@ class SearchPage extends React.Component {
                             </h1>
                         </div>
                     </div>
-                </section>
+                </header>
 
                 {/*Result section*/}
                 <section className="section">

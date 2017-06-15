@@ -22980,6 +22980,7 @@ var InsightsPage = function (_React$Component) {
 
         _this.fetchData = _this.fetchData.bind(_this);
         _this.state = {
+            isFetching: true,
             mostSpokenTopics: [],
             mostRatedTopics: [],
             latestPost: {
@@ -22995,8 +22996,10 @@ var InsightsPage = function (_React$Component) {
         key: "fetchData",
         value: function fetchData() {
             var self = this;
+
             _axios2.default.all([_axios2.default.get(_config.BASE_URL + '/most-spoken-topics'), _axios2.default.get(_config.BASE_URL + '/most-rated-topics'), _axios2.default.get(_config.BASE_URL + '/latest-post')]).then(_axios2.default.spread(function (mostSpokenTopicsResponse, mostRatedTopicsResponse, latestPostTopics) {
                 self.setState({
+                    'isFetching': false,
                     'mostSpokenTopics': mostSpokenTopicsResponse.data,
                     'mostRatedTopics': mostRatedTopicsResponse.data,
                     'latestPost': latestPostTopics.data
@@ -23006,34 +23009,63 @@ var InsightsPage = function (_React$Component) {
     }, {
         key: "componentDidMount",
         value: function componentDidMount() {
+            var _this2 = this;
+
             this.fetchData();
-            // this.interval = setInterval(
-            //     () => this.fetchData(), 10000
-            // );
+            this.interval = setInterval(function () {
+                return _this2.fetchData();
+            }, 10000);
         }
     }, {
         key: "render",
         value: function render() {
-            return _react2.default.createElement(
-                "section",
-                { className: "InsightsPage" },
+            var hero = _react2.default.createElement(
+                "header",
+                { className: "hero is-success is-bold" },
                 _react2.default.createElement(
-                    "section",
-                    { className: "hero is-success is-bold" },
+                    "div",
+                    { className: "hero-body" },
                     _react2.default.createElement(
                         "div",
-                        { className: "hero-body" },
+                        { className: "container has-text-centered" },
+                        _react2.default.createElement(
+                            "h1",
+                            { className: "title" },
+                            "Promofarma Trends"
+                        )
+                    )
+                )
+            );
+
+            if (this.state.isFetching === true) {
+                return _react2.default.createElement(
+                    "section",
+                    { className: "InsightsPage" },
+                    hero,
+                    _react2.default.createElement(
+                        "section",
+                        { className: "section" },
                         _react2.default.createElement(
                             "div",
-                            { className: "container has-text-centered" },
+                            { className: "container" },
                             _react2.default.createElement(
-                                "h1",
-                                { className: "title" },
-                                "Promofarma Trends"
+                                "div",
+                                { className: "columns" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "column" },
+                                    _react2.default.createElement("span", { className: "spinner" })
+                                )
                             )
                         )
                     )
-                ),
+                );
+            }
+
+            return _react2.default.createElement(
+                "section",
+                { className: "InsightsPage" },
+                hero,
                 _react2.default.createElement(
                     "section",
                     { className: "section" },
@@ -23329,11 +23361,7 @@ var MostSpokenTopicsList = function (_React$Component) {
         key: 'render',
         value: function render() {
             if (typeof this.props.data.trends === 'undefined') {
-                return _react2.default.createElement(
-                    'div',
-                    { className: 'box' },
-                    _react2.default.createElement('span', { className: 'spinner' })
-                );
+                return false;
             }
 
             return _react2.default.createElement(
@@ -23690,7 +23718,7 @@ var SearchPage = function (_React$Component) {
 
     _createClass(SearchPage, [{
         key: 'fetchSearchRequest',
-        value: function fetchSearchRequest(requestValue) {
+        value: function fetchSearchRequest() {
             var self = this;
             var url = _config.BASE_URL + '/search-data';
             self.setState({
