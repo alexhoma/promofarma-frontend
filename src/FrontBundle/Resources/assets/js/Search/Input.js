@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
-const BASE_URL = 'http://demo6666449.mockable.io';
+import { BASE_URL } from '../config';
 
 class Input extends React.Component {
     constructor(props) {

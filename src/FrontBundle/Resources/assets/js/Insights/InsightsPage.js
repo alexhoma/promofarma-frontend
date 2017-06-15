@@ -2,8 +2,35 @@ import React from 'react';
 import MostSpokenTopicsList from "./MostSpokenTopicsList";
 import LatestPost from "./LatestPost";
 import MostRatedTopicsList from "./MostRatedTopicsList";
+import axios from 'axios';
+import { BASE_URL } from "../config";
 
 class InsightsPage extends React.Component {
+    constructor() {
+        super();
+        this.fetchData = this.fetchData.bind(this);
+        this.state = {
+            mostSpokenTopics: '',
+            mostRatedTopics: '',
+            latestPost: '',
+        };
+    }
+
+    fetchData() {
+        axios.all([
+            axios.get(BASE_URL + '/data'),
+            axios.get(BASE_URL + '/data'),
+            axios.get(BASE_URL + '/data')
+        ])
+        .then(axios.spread(function (acct, perms) {
+            console.log(acct, perms)
+        }));
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(() => this.fetchData(), 5000);
+    }
+
     render() {
         return (
             <section className="InsightsPage">
@@ -23,13 +50,19 @@ class InsightsPage extends React.Component {
                     <div className="container">
                         <div className="columns">
                             <div className="column">
-                                <MostSpokenTopicsList/>
+                                <MostSpokenTopicsList
+                                    data={this.state.mostSpokenTopics}
+                                />
                             </div>
                             <div className="column">
-                                <MostRatedTopicsList/>
+                                <MostRatedTopicsList
+                                    data={this.state.mostRatedTopics}
+                                />
                             </div>
                             <div className="column">
-                                <LatestPost/>
+                                <LatestPost
+                                    data={this.state.latestPost}
+                                />
                             </div>
                         </div>
                     </div>
