@@ -23739,7 +23739,7 @@ var SearchPage = function (_React$Component) {
                 'section',
                 { className: 'SearchPage' },
                 _react2.default.createElement(
-                    'section',
+                    'header',
                     { className: 'hero is-success is-bold' },
                     _react2.default.createElement(
                         'div',
@@ -23838,5 +23838,21 @@ if (null !== document.getElementById('react-page-search')) {
         _react2.default.createElement(_SearchPage2.default, null)
     ), document.getElementById('react-page-search'));
 }
+
+/**
+ * Menu Scripts
+ */
+document.querySelector('.nav-toggle').addEventListener('click', function (event) {
+    var element = event.target.className;
+    var menu = document.querySelector('.nav-menu');
+
+    if (element.indexOf('is-active') !== -1) {
+        event.target.className = 'nav-toggle';
+        menu.className = 'nav-right nav-menu';
+    } else {
+        event.target.className += ' is-active';
+        menu.className += ' is-active';
+    }
+});
 
 },{"./Insights/InsightsPage":219,"./Main":223,"./Search/SearchPage":226,"react":218,"react-dom":58}]},{},[219,220,221,222,223,224,225,226,227,228]);

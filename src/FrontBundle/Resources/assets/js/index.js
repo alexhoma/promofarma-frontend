@@ -30,3 +30,21 @@ if (null !== document.getElementById('react-page-search')) {
         document.getElementById('react-page-search')
     );
 }
+
+/**
+ * Menu Scripts
+ */
+document
+    .querySelector('.nav-toggle')
+    .addEventListener('click', (event) => {
+        let element = event.target.className;
+        let menu = document.querySelector('.nav-menu');
+
+        if (element.indexOf('is-active') !== -1) {
+            event.target.className = 'nav-toggle';
+            menu.className = 'nav-right nav-menu';
+        } else {
+            event.target.className += ' is-active';
+            menu.className += ' is-active';
+        }
+    });
