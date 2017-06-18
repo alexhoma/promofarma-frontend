@@ -28764,6 +28764,8 @@ var _reactModal = require('react-modal');
 
 var _reactModal2 = _interopRequireDefault(_reactModal);
 
+var _Html = require('../../../Common/Html');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28771,6 +28773,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var modalCustomStyle = {
+    overlay: {
+        position: 'absolute',
+        backgroundColor: 'rgba(32, 32, 32, 0.75)'
+    },
+    content: {
+        top: '0',
+        border: '0',
+        background: '#fff',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
+        borderRadius: '0',
+        padding: '52px 0 0 0',
+        height: '100%'
+    }
+};
 
 var TopicDetail = function (_React$Component) {
     _inherits(TopicDetail, _React$Component);
@@ -28798,12 +28817,16 @@ var TopicDetail = function (_React$Component) {
                 _reactModal2.default,
                 {
                     isOpen: this.props.modalState,
-                    contentLabel: this.state.name + ' modal'
+                    contentLabel: this.state.name + ' modal',
+                    style: modalCustomStyle
                 },
                 _react2.default.createElement(
-                    'strong',
+                    _Html.Hero,
                     null,
-                    this.state.name
+                    '#',
+                    this.state.name,
+                    _react2.default.createElement('a', { onClick: this.props.onCloseModal,
+                        className: 'delete is-large' })
                 ),
                 _react2.default.createElement(_reactTrend2.default, {
                     smooth: true,
@@ -28815,12 +28838,7 @@ var TopicDetail = function (_React$Component) {
                     radius: 17,
                     strokeWidth: 2.8,
                     strokeLinecap: 'round'
-                }),
-                _react2.default.createElement(
-                    'button',
-                    { onClick: this.props.onCloseModal },
-                    'Close Modal'
-                )
+                })
             );
         }
     }]);
@@ -28830,7 +28848,7 @@ var TopicDetail = function (_React$Component) {
 
 exports.default = TopicDetail;
 
-},{"react":229,"react-modal":195,"react-trend":202}],235:[function(require,module,exports){
+},{"../../../Common/Html":230,"react":229,"react-modal":195,"react-trend":202}],235:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

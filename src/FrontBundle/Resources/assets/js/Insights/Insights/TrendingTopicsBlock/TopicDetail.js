@@ -1,6 +1,24 @@
 import React from 'react';
 import Trend from 'react-trend';
 import ReactModal from 'react-modal';
+import {Hero} from "../../../Common/Html";
+
+const modalCustomStyle = {
+    overlay : {
+        position        : 'absolute',
+        backgroundColor : 'rgba(32, 32, 32, 0.75)'
+    },
+    content : {
+        top                     : '0',
+        border                  : '0',
+        background              : '#fff',
+        overflow                : 'auto',
+        WebkitOverflowScrolling : 'touch',
+        borderRadius            : '0',
+        padding                 : '52px 0 0 0',
+        height                  : '100%'
+    }
+};
 
 class TopicDetail extends React.Component {
     constructor(props) {
@@ -20,8 +38,14 @@ class TopicDetail extends React.Component {
             <ReactModal
                 isOpen={this.props.modalState}
                 contentLabel={this.state.name + ' modal'}
+                style={modalCustomStyle}
             >
-                <strong>{this.state.name}</strong>
+                <Hero>
+                    #{this.state.name}
+                    <a onClick={this.props.onCloseModal}
+                       className="delete is-large" />
+                </Hero>
+
                 <Trend
                     smooth
                     autoDraw
@@ -33,9 +57,6 @@ class TopicDetail extends React.Component {
                     strokeWidth={2.8}
                     strokeLinecap={'round'}
                 />
-                <button onClick={this.props.onCloseModal}>
-                    Close Modal
-                </button>
             </ReactModal>
         );
     }
