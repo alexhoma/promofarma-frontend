@@ -13,6 +13,8 @@ export const modalCustomPageStyle = {
     },
     content: {
         top: '0',
+        left: '0',
+        right: '0',
         border: '0',
         background: '#fff',
         overflow: 'auto',

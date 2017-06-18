@@ -43357,9 +43357,13 @@ var _reactModal = require('react-modal');
 
 var _reactModal2 = _interopRequireDefault(_reactModal);
 
-var _Html = require('../../../Common/Html');
-
 var _reactChartjs = require('react-chartjs-2');
+
+var _axios = require('axios');
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _Html = require('../../../Common/Html');
 
 var _config = require('../../../config');
 
@@ -43379,28 +43383,56 @@ var TopicDetail = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (TopicDetail.__proto__ || Object.getPrototypeOf(TopicDetail)).call(this, props));
 
+        _this.fetchData = _this.fetchData.bind(_this);
+        _this.buildLabels = _this.buildLabels.bind(_this);
         _this.state = {
-            name: 'cremaSolar',
-            dates: {
-                initial: '1497537585',
-                final: '1497537585'
-            },
-            chart_data: [10, 30, 50, 60, 40]
+            isFetching: true,
+            dataResponse: {
+                tag_name: '',
+                data_chart: [],
+                init_and_final_dates: {
+                    initial: '',
+                    final: ''
+                }
+            }
         };
         return _this;
     }
 
     _createClass(TopicDetail, [{
+        key: 'fetchData',
+        value: function fetchData() {
+            var self = this;
+            var url = _config.BASE_URL + '/evolutionMostSpokenTopic';
+
+            _axios2.default.get(url).then(function (response) {
+                self.setState({
+                    dataResponse: response.data,
+                    isFetching: false
+                });
+            });
+        }
+    }, {
+        key: 'buildLabels',
+        value: function buildLabels() {
+            var labels = [];
+            this.state.dataResponse.data_chart.forEach(function (value) {
+                labels.push('');
+            });
+
+            return labels;
+        }
+    }, {
         key: 'render',
         value: function render() {
             var chartData = {
-                labels: ['January', 'January', 'January', 'February', 'February'],
+                labels: this.buildLabels(),
                 responsive: true,
                 datasets: [{
                     label: '',
                     fill: false,
                     borderColor: '#23d160',
-                    data: this.state.chart_data
+                    data: this.state.dataResponse.data_chart
                 }]
             };
 
@@ -43409,17 +43441,26 @@ var TopicDetail = function (_React$Component) {
                 {
                     isOpen: this.props.modalState,
                     contentLabel: this.state.name + ' modal',
-                    style: _config.modalCustomPageStyle
+                    style: _config.modalCustomPageStyle,
+                    onAfterOpen: this.fetchData
                 },
                 _react2.default.createElement(
                     _Html.Hero,
                     null,
                     '#',
-                    this.state.name,
+                    this.state.dataResponse.tag_name,
                     _react2.default.createElement('a', { onClick: this.props.onCloseModal,
                         className: 'delete is-large' })
                 ),
-                _react2.default.createElement(
+                this.state.isFetching ? _react2.default.createElement(
+                    _Html.ColumnsSection,
+                    null,
+                    _react2.default.createElement(
+                        _Html.Column,
+                        null,
+                        _react2.default.createElement('span', { className: 'spinner' })
+                    )
+                ) : _react2.default.createElement(
                     _Html.ColumnsSection,
                     null,
                     _react2.default.createElement(
@@ -43441,7 +43482,7 @@ var TopicDetail = function (_React$Component) {
 
 exports.default = TopicDetail;
 
-},{"../../../Common/Html":272,"../../../config":283,"react":271,"react-chartjs-2":110,"react-modal":245}],277:[function(require,module,exports){
+},{"../../../Common/Html":272,"../../../config":283,"axios":1,"react":271,"react-chartjs-2":110,"react-modal":245}],277:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43840,6 +43881,16 @@ var Result = function (_React$Component) {
     }
 
     _createClass(Result, [{
+        key: "buildLabels",
+        value: function buildLabels() {
+            var labels = [];
+            this.props.searchResult.evolution_searched_word.data_chart.forEach(function (value) {
+                labels.push('');
+            });
+
+            return labels;
+        }
+    }, {
         key: "render",
         value: function render() {
             if (this.props.fetching === true) {
@@ -43873,7 +43924,7 @@ var Result = function (_React$Component) {
 
 
             var chartData = {
-                labels: ['January', 'January', 'January', 'February', 'February'],
+                labels: this.buildLabels(),
                 responsive: true,
                 datasets: [{
                     label: '',
@@ -43974,8 +44025,7 @@ var SearchPage = function (_React$Component) {
         key: "fetchSearchRequest",
         value: function fetchSearchRequest() {
             var self = this;
-            // const url = BASE_URL + '/searchInPosts';
-            var url = _config.BASE_URL + '/search-data';
+            var url = _config.BASE_URL + '/searchInPosts';
             self.setState({
                 isFetching: true
             });
@@ -44036,6 +44086,8 @@ var modalCustomPageStyle = exports.modalCustomPageStyle = {
     },
     content: {
         top: '0',
+        left: '0',
+        right: '0',
         border: '0',
         background: '#fff',
         overflow: 'auto',

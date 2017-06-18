@@ -7,6 +7,17 @@ class Result extends React.Component {
         super(props);
     }
 
+    buildLabels() {
+        let labels = [];
+        this.props.searchResult.evolution_searched_word.data_chart.forEach(
+            (value) => {
+                labels.push('');
+            }
+        );
+
+        return labels;
+    }
+
     render() {
         if (this.props.fetching === true) {
             return (
@@ -33,7 +44,7 @@ class Result extends React.Component {
         } = this.props.searchResult;
 
         let chartData = {
-            labels: ['January','January','January','February', 'February'],
+            labels: this.buildLabels(),
             responsive: true,
             datasets: [{
                 label: '',

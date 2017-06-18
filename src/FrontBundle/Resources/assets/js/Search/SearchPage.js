@@ -20,8 +20,7 @@ class SearchPage extends React.Component {
 
     fetchSearchRequest() {
         const self = this;
-        // const url = BASE_URL + '/searchInPosts';
-        const url = BASE_URL + '/search-data';
+        const url = BASE_URL + '/searchInPosts';
         self.setState({
             isFetching: true
         });
