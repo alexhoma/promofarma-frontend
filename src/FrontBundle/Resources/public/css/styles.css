@@ -4372,5 +4372,9 @@ span.spinner {
   .InsightsPage .box .content .table tbody > tr > td {
     vertical-align: inherit;
     border: none; }
+.InsightsPage .box.BestRatedTopics .content .table tbody > tr {
+  cursor: initial; }
+  .InsightsPage .box.BestRatedTopics .content .table tbody > tr:hover {
+    background-color: transparent; }
 
 /*# sourceMappingURL=styles.css.map */

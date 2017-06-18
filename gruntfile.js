@@ -62,7 +62,7 @@ module.exports = function (grunt) {
                 options: {
                     spawn: false,
                 }
-            }
+            },
             // sass: {
             //     files: 'src/FrontBundle/Resources/assets/sass/**/*.{scss,sass}',
             //     tasks: ['sass:dist', 'cssmin']

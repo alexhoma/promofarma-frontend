@@ -40,8 +40,12 @@ export const Column = (props) => {
 };
 
 export const Box = (props) => {
+    let extraClass = (props.className)
+        ? props.className
+        : '';
+
     return (
-        <div className="box">
+        <div className={'box ' + extraClass}>
             <article className="media">
                 <div className="media-content">
                     <div className="content">
@@ -70,6 +74,14 @@ export const Title = (props) => {
         }
         case 'h4': {
             return <h4 className={htmlClassName}>{props.children}</h4>;
+        }
+        case 'strong': {
+            return (
+                <strong>
+                    {props.children}
+                    <hr />
+                </strong>
+            )
         }
     }
 };

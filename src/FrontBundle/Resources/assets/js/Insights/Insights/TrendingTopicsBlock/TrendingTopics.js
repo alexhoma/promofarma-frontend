@@ -1,6 +1,7 @@
 import React from 'react';
 import Topic from "./Topic";
-import {Box} from "../../../Common/Html";
+import {Box, Title} from "../../../Common/Html";
+import moment from "moment";
 
 class TrendingTopics extends React.Component {
     constructor(props) {
@@ -13,10 +14,15 @@ class TrendingTopics extends React.Component {
         }
 
         return (
-            <Box>
-                <strong>Latest trending topics</strong>
-                <hr />
-                <table className="table is-narrow">
+            <Box className="TrendingTopics">
+                <Title heading={'strong'}>
+                    Latest trending topics
+                    <span className="is-pulled-right has-text-primary">
+                        {moment().format('MMMM')}
+                    </span>
+                </Title>
+
+                <table className="table">
                     <tbody>
                     {this.props.data.map((topic, index) =>
                         <Topic

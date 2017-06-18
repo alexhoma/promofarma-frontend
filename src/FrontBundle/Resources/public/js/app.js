@@ -23226,7 +23226,7 @@ var Bubble = exports.Bubble = function (_React$Component9) {
 
 var defaults = exports.defaults = _chart2.default.defaults;
 exports.Chart = _chart2.default;
-},{"chart.js":26,"lodash.isequal":100,"prop-types":108,"react":279,"react-dom":111}],111:[function(require,module,exports){
+},{"chart.js":26,"lodash.isequal":100,"prop-types":108,"react":271,"react-dom":111}],111:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/ReactDOM');
@@ -26926,7 +26926,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-},{"./ReactPropTypesSecret":181,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"prop-types/factory":105,"react/lib/React":256}],135:[function(require,module,exports){
+},{"./ReactPropTypesSecret":181,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"prop-types/factory":105,"react/lib/React":248}],135:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -27519,7 +27519,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":133,"./ReactReconciler":183,"./instantiateReactComponent":227,"./shouldUpdateReactComponent":235,"./traverseAllChildren":236,"_process":103,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":260}],138:[function(require,module,exports){
+},{"./KeyEscapeUtils":133,"./ReactReconciler":183,"./instantiateReactComponent":227,"./shouldUpdateReactComponent":235,"./traverseAllChildren":236,"_process":103,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":252}],138:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28495,7 +28495,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-},{"./ReactComponentEnvironment":139,"./ReactErrorUtils":164,"./ReactInstanceMap":172,"./ReactInstrumentation":173,"./ReactNodeTypes":178,"./ReactReconciler":183,"./checkReactTypeSpec":210,"./reactProdInvariant":231,"./shouldUpdateReactComponent":235,"_process":103,"fbjs/lib/emptyObject":84,"fbjs/lib/invariant":91,"fbjs/lib/shallowEqual":97,"fbjs/lib/warning":98,"object-assign":102,"react/lib/React":256,"react/lib/ReactCurrentOwner":261}],141:[function(require,module,exports){
+},{"./ReactComponentEnvironment":139,"./ReactErrorUtils":164,"./ReactInstanceMap":172,"./ReactInstrumentation":173,"./ReactNodeTypes":178,"./ReactReconciler":183,"./checkReactTypeSpec":210,"./reactProdInvariant":231,"./shouldUpdateReactComponent":235,"_process":103,"fbjs/lib/emptyObject":84,"fbjs/lib/invariant":91,"fbjs/lib/shallowEqual":97,"fbjs/lib/warning":98,"object-assign":102,"react/lib/React":248,"react/lib/ReactCurrentOwner":253}],141:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -30366,7 +30366,7 @@ var ReactDOMInvalidARIAHook = {
 
 module.exports = ReactDOMInvalidARIAHook;
 }).call(this,require('_process'))
-},{"./DOMProperty":122,"_process":103,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":260}],151:[function(require,module,exports){
+},{"./DOMProperty":122,"_process":103,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":252}],151:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -30411,7 +30411,7 @@ var ReactDOMNullInputValuePropHook = {
 
 module.exports = ReactDOMNullInputValuePropHook;
 }).call(this,require('_process'))
-},{"_process":103,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":260}],152:[function(require,module,exports){
+},{"_process":103,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":252}],152:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -30535,7 +30535,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":144,"./ReactDOMSelect":153,"_process":103,"fbjs/lib/warning":98,"object-assign":102,"react/lib/React":256}],153:[function(require,module,exports){
+},{"./ReactDOMComponentTree":144,"./ReactDOMSelect":153,"_process":103,"fbjs/lib/warning":98,"object-assign":102,"react/lib/React":248}],153:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -31527,7 +31527,7 @@ var ReactDOMUnknownPropertyHook = {
 
 module.exports = ReactDOMUnknownPropertyHook;
 }).call(this,require('_process'))
-},{"./DOMProperty":122,"./EventPluginRegistry":128,"_process":103,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":260}],159:[function(require,module,exports){
+},{"./DOMProperty":122,"./EventPluginRegistry":128,"_process":103,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":252}],159:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -31890,7 +31890,7 @@ if (/[?&]react_perf\b/.test(url)) {
 
 module.exports = ReactDebugTool;
 }).call(this,require('_process'))
-},{"./ReactHostOperationHistoryHook":169,"./ReactInvalidSetStateWarningHook":174,"_process":103,"fbjs/lib/ExecutionEnvironment":77,"fbjs/lib/performanceNow":96,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":260}],160:[function(require,module,exports){
+},{"./ReactHostOperationHistoryHook":169,"./ReactInvalidSetStateWarningHook":174,"_process":103,"fbjs/lib/ExecutionEnvironment":77,"fbjs/lib/performanceNow":96,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":252}],160:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33343,7 +33343,7 @@ var ReactMount = {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":120,"./DOMProperty":122,"./ReactBrowserEventEmitter":136,"./ReactDOMComponentTree":144,"./ReactDOMContainerInfo":145,"./ReactDOMFeatureFlags":147,"./ReactFeatureFlags":167,"./ReactInstanceMap":172,"./ReactInstrumentation":173,"./ReactMarkupChecksum":175,"./ReactReconciler":183,"./ReactUpdateQueue":187,"./ReactUpdates":188,"./instantiateReactComponent":227,"./reactProdInvariant":231,"./setInnerHTML":233,"./shouldUpdateReactComponent":235,"_process":103,"fbjs/lib/emptyObject":84,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"react/lib/React":256,"react/lib/ReactCurrentOwner":261}],177:[function(require,module,exports){
+},{"./DOMLazyTree":120,"./DOMProperty":122,"./ReactBrowserEventEmitter":136,"./ReactDOMComponentTree":144,"./ReactDOMContainerInfo":145,"./ReactDOMFeatureFlags":147,"./ReactFeatureFlags":167,"./ReactInstanceMap":172,"./ReactInstrumentation":173,"./ReactMarkupChecksum":175,"./ReactReconciler":183,"./ReactUpdateQueue":187,"./ReactUpdates":188,"./instantiateReactComponent":227,"./reactProdInvariant":231,"./setInnerHTML":233,"./shouldUpdateReactComponent":235,"_process":103,"fbjs/lib/emptyObject":84,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"react/lib/React":248,"react/lib/ReactCurrentOwner":253}],177:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -33791,7 +33791,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-},{"./ReactChildReconciler":137,"./ReactComponentEnvironment":139,"./ReactInstanceMap":172,"./ReactInstrumentation":173,"./ReactReconciler":183,"./flattenChildren":215,"./reactProdInvariant":231,"_process":103,"fbjs/lib/emptyFunction":83,"fbjs/lib/invariant":91,"react/lib/ReactCurrentOwner":261}],178:[function(require,module,exports){
+},{"./ReactChildReconciler":137,"./ReactComponentEnvironment":139,"./ReactInstanceMap":172,"./ReactInstrumentation":173,"./ReactReconciler":183,"./flattenChildren":215,"./reactProdInvariant":231,"_process":103,"fbjs/lib/emptyFunction":83,"fbjs/lib/invariant":91,"react/lib/ReactCurrentOwner":253}],178:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -33833,7 +33833,7 @@ var ReactNodeTypes = {
 
 module.exports = ReactNodeTypes;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"react/lib/React":256}],179:[function(require,module,exports){
+},{"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"react/lib/React":248}],179:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -34878,7 +34878,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactInstanceMap":172,"./ReactInstrumentation":173,"./ReactUpdates":188,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"react/lib/ReactCurrentOwner":261}],188:[function(require,module,exports){
+},{"./ReactInstanceMap":172,"./ReactInstrumentation":173,"./ReactUpdates":188,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"react/lib/ReactCurrentOwner":253}],188:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -37151,7 +37151,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocationNames":180,"./ReactPropTypesSecret":181,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":260}],211:[function(require,module,exports){
+},{"./ReactPropTypeLocationNames":180,"./ReactPropTypesSecret":181,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":252}],211:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37448,7 +37448,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":144,"./ReactInstanceMap":172,"./getHostComponentFromComposite":221,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"react/lib/ReactCurrentOwner":261}],215:[function(require,module,exports){
+},{"./ReactDOMComponentTree":144,"./ReactInstanceMap":172,"./getHostComponentFromComposite":221,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"react/lib/ReactCurrentOwner":253}],215:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -37526,7 +37526,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":133,"./traverseAllChildren":236,"_process":103,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":260}],216:[function(require,module,exports){
+},{"./KeyEscapeUtils":133,"./traverseAllChildren":236,"_process":103,"fbjs/lib/warning":98,"react/lib/ReactComponentTreeHook":252}],216:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38329,7 +38329,7 @@ _assign(ReactCompositeComponentWrapper.prototype, ReactCompositeComponent, {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-},{"./ReactCompositeComponent":140,"./ReactEmptyComponent":163,"./ReactHostComponent":168,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"object-assign":102,"react/lib/getNextDebugID":275}],228:[function(require,module,exports){
+},{"./ReactCompositeComponent":140,"./ReactEmptyComponent":163,"./ReactHostComponent":168,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"object-assign":102,"react/lib/getNextDebugID":267}],228:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38891,7 +38891,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":133,"./ReactElementSymbol":162,"./getIteratorFn":222,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"react/lib/ReactCurrentOwner":261}],237:[function(require,module,exports){
+},{"./KeyEscapeUtils":133,"./ReactElementSymbol":162,"./getIteratorFn":222,"./reactProdInvariant":231,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"react/lib/ReactCurrentOwner":253}],237:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -39516,7 +39516,7 @@ Modal.defaultStyles = {
 };
 exports.default = Modal;
 }).call(this,require('_process'))
-},{"../helpers/ariaAppHider":240,"../helpers/refCount":242,"./ModalPortal":239,"_process":103,"element-class":74,"exenv":75,"prop-types":108,"react":279,"react-dom":111}],239:[function(require,module,exports){
+},{"../helpers/ariaAppHider":240,"../helpers/refCount":242,"./ModalPortal":239,"_process":103,"element-class":74,"exenv":75,"prop-types":108,"react":271,"react-dom":111}],239:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39801,7 +39801,7 @@ ModalPortal.propTypes = {
   children: _propTypes.PropTypes.node
 };
 exports.default = ModalPortal;
-},{"../helpers/focusManager":241,"../helpers/scopeTab":243,"prop-types":108,"react":279}],240:[function(require,module,exports){
+},{"../helpers/focusManager":241,"../helpers/scopeTab":243,"prop-types":108,"react":271}],240:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40060,542 +40060,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _Modal2.default;
 },{"./components/Modal":238}],246:[function(require,module,exports){
-'use strict';
-
-exports.__esModule = true;
-exports.generateAutoDrawCss = exports.normalizeDataset = undefined;
-
-var _math = require('../../helpers/math.helpers');
-
-var normalizeDataset = exports.normalizeDataset = function normalizeDataset(data, _ref) {
-  var minX = _ref.minX,
-      maxX = _ref.maxX,
-      minY = _ref.minY,
-      maxY = _ref.maxY;
-
-  // For the X axis, we want to normalize it based on its index in the array.
-  // For the Y axis, we want to normalize it based on the element's value.
-  //
-  // X axis is easy: just evenly-space each item in the array.
-  // For the Y axis, we first need to find the min and max of our array,
-  // and then normalize those values between 0 and 1.
-  var boundariesX = { min: 0, max: data.length - 1 };
-  var boundariesY = { min: Math.min.apply(Math, data), max: Math.max.apply(Math, data) };
-
-  var normalizedData = data.map(function (point, index) {
-    return {
-      x: (0, _math.normalize)({
-        value: index,
-        min: boundariesX.min,
-        max: boundariesX.max,
-        scaleMin: minX,
-        scaleMax: maxX
-      }),
-      y: (0, _math.normalize)({
-        value: point,
-        min: boundariesY.min,
-        max: boundariesY.max,
-        scaleMin: minY,
-        scaleMax: maxY
-      })
-    };
-  });
-
-  // According to the SVG spec, paths with a height/width of `0` can't have
-  // linear gradients applied. This means that our lines are invisible when
-  // the dataset is flat (eg. [0, 0, 0, 0]).
-  //
-  // The hacky solution is to apply a very slight offset to the first point of
-  // the dataset. As ugly as it is, it's the best solution we can find (there
-  // are ways within the SVG spec of changing it, but not without causing
-  // breaking changes).
-  if (boundariesY.min === boundariesY.max) {
-    // eslint-disable-next-line no-param-reassign
-    normalizedData[0].y += 0.0001;
-  }
-
-  return normalizedData;
-};
-
-var generateAutoDrawCss = exports.generateAutoDrawCss = function generateAutoDrawCss(_ref2) {
-  var id = _ref2.id,
-      lineLength = _ref2.lineLength,
-      duration = _ref2.duration,
-      easing = _ref2.easing;
-
-  // We do the animation using the dash array/offset trick
-  // https://css-tricks.com/svg-line-animation-works/
-  var autodrawKeyframeAnimation = '\n    @keyframes react-trend-autodraw-' + id + ' {\n      0% {\n        stroke-dasharray: ' + lineLength + ';\n        stroke-dashoffset: ' + lineLength + '\n      }\n      100% {\n        stroke-dasharray: ' + lineLength + ';\n        stroke-dashoffset: 0;\n      }\n      100% {\n        stroke-dashoffset: \'\';\n        stroke-dasharray: \'\';\n      }\n    }\n  ';
-
-  // One unfortunate side-effect of the auto-draw is that the line is
-  // actually 1 big dash, the same length as the line itself. If the
-  // line length changes (eg. radius change, new data), that dash won't
-  // be the same length anymore. We can fix that by removing those
-  // properties once the auto-draw is completed.
-  var cleanupKeyframeAnimation = '\n    @keyframes react-trend-autodraw-cleanup-' + id + ' {\n      to {\n        stroke-dasharray: \'\';\n        stroke-dashoffset: \'\';\n      }\n    }\n  ';
-
-  return '\n    ' + autodrawKeyframeAnimation + '\n\n    ' + cleanupKeyframeAnimation + '\n\n    #react-trend-' + id + ' {\n      animation:\n        react-trend-autodraw-' + id + ' ' + duration + 'ms ' + easing + ',\n        react-trend-autodraw-cleanup-' + id + ' 1ms ' + duration + 'ms\n      ;\n    }\n  ';
-};
-},{"../../helpers/math.helpers":250}],247:[function(require,module,exports){
-(function (process){
-'use strict';
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _utils = require('../../utils');
-
-var _DOM = require('../../helpers/DOM.helpers');
-
-var _math = require('../../helpers/math.helpers');
-
-var _misc = require('../../helpers/misc.helpers');
-
-var _Trend = require('./Trend.helpers');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var propTypes = {
-  data: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.shape({
-    value: _propTypes2.default.number
-  })]).isRequired).isRequired,
-  smooth: _propTypes2.default.bool,
-  autoDraw: _propTypes2.default.bool,
-  autoDrawDuration: _propTypes2.default.number,
-  autoDrawEasing: _propTypes2.default.string,
-  width: _propTypes2.default.number,
-  height: _propTypes2.default.number,
-  padding: _propTypes2.default.number,
-  radius: _propTypes2.default.number,
-  gradient: _propTypes2.default.arrayOf(_propTypes2.default.string)
-};
-
-var defaultProps = {
-  radius: 10,
-  stroke: 'black',
-  padding: 8,
-  strokeWidth: 1,
-  autoDraw: false,
-  autoDrawDuration: 2000,
-  autoDrawEasing: 'ease'
-};
-
-var Trend = function (_Component) {
-  _inherits(Trend, _Component);
-
-  function Trend(props) {
-    _classCallCheck(this, Trend);
-
-    // Generate a random ID. This is important for distinguishing between
-    // Trend components on a page, so that they can have different keyframe
-    // animations.
-    var _this = _possibleConstructorReturn(this, _Component.call(this, props));
-
-    _this.trendId = (0, _misc.generateId)();
-    _this.gradientId = 'react-trend-vertical-gradient-' + _this.trendId;
-    return _this;
-  }
-
-  Trend.prototype.componentDidMount = function componentDidMount() {
-    var _props = this.props,
-        autoDraw = _props.autoDraw,
-        autoDrawDuration = _props.autoDrawDuration,
-        autoDrawEasing = _props.autoDrawEasing;
-
-
-    if (autoDraw) {
-      this.lineLength = this.path.getTotalLength();
-
-      var css = (0, _Trend.generateAutoDrawCss)({
-        id: this.trendId,
-        lineLength: this.lineLength,
-        duration: autoDrawDuration,
-        easing: autoDrawEasing
-      });
-
-      (0, _DOM.injectStyleTag)(css);
-    }
-  };
-
-  Trend.prototype.getDelegatedProps = function getDelegatedProps() {
-    return (0, _utils.omit)(this.props, Object.keys(propTypes));
-  };
-
-  Trend.prototype.renderGradientDefinition = function renderGradientDefinition() {
-    var gradient = this.props.gradient;
-
-
-    return _react2.default.createElement(
-      'defs',
-      null,
-      _react2.default.createElement(
-        'linearGradient',
-        {
-          id: this.gradientId,
-          x1: '0%',
-          y1: '0%',
-          x2: '0%',
-          y2: '100%'
-        },
-        gradient.slice().reverse().map(function (c, index) {
-          return _react2.default.createElement('stop', {
-            key: index,
-            offset: (0, _math.normalize)({
-              value: index,
-              min: 0,
-              // If we only supply a single colour, it will try to normalize
-              // between 0 and 0, which will create NaN. By making the `max`
-              // at least 1, we ensure single-color "gradients" work.
-              max: gradient.length - 1 || 1
-            }),
-            stopColor: c
-          });
-        })
-      )
-    );
-  };
-
-  Trend.prototype.render = function render() {
-    var _this2 = this;
-
-    var _props2 = this.props,
-        data = _props2.data,
-        smooth = _props2.smooth,
-        width = _props2.width,
-        height = _props2.height,
-        padding = _props2.padding,
-        radius = _props2.radius,
-        gradient = _props2.gradient;
-
-    // We need at least 2 points to draw a graph.
-
-    if (!data || data.length < 2) {
-      return null;
-    }
-
-    // `data` can either be an array of numbers:
-    // [1, 2, 3]
-    // or, an array of objects containing a value:
-    // [ { value: 1 }, { value: 2 }, { value: 3 }]
-    //
-    // For now, we're just going to convert the second form to the first.
-    // Later on, if/when we support tooltips, we may adjust.
-    var plainValues = data.map(function (point) {
-      return typeof point === 'number' ? point : point.value;
-    });
-
-    // Our viewbox needs to be in absolute units, so we'll default to 300x75
-    // Our SVG can be a %, though; this is what makes it scalable.
-    // By defaulting to percentages, the SVG will grow to fill its parent
-    // container, preserving a 1/4 aspect ratio.
-    var viewBoxWidth = width || 300;
-    var viewBoxHeight = height || 75;
-    var svgWidth = width || '100%';
-    var svgHeight = height || '25%';
-
-    var normalizedValues = (0, _Trend.normalizeDataset)(plainValues, {
-      minX: padding,
-      maxX: viewBoxWidth - padding,
-      // NOTE: Because SVGs are indexed from the top left, but most data is
-      // indexed from the bottom left, we're inverting the Y min/max.
-      minY: viewBoxHeight - padding,
-      maxY: padding
-    });
-
-    var path = smooth ? (0, _DOM.buildSmoothPath)(normalizedValues, { radius: radius }) : (0, _DOM.buildLinearPath)(normalizedValues);
-
-    return _react2.default.createElement(
-      'svg',
-      _extends({
-        width: svgWidth,
-        height: svgHeight,
-        viewBox: '0 0 ' + viewBoxWidth + ' ' + viewBoxHeight
-      }, this.getDelegatedProps()),
-      gradient && this.renderGradientDefinition(),
-      _react2.default.createElement('path', {
-        ref: function ref(elem) {
-          _this2.path = elem;
-        },
-        id: 'react-trend-' + this.trendId,
-        d: path,
-        fill: 'none',
-        stroke: gradient ? 'url(#' + this.gradientId + ')' : undefined
-      })
-    );
-  };
-
-  return Trend;
-}(_react.Component);
-
-process.env.NODE_ENV !== "production" ? Trend.propTypes = propTypes : void 0;
-Trend.defaultProps = defaultProps;
-
-exports.default = Trend;
-module.exports = exports['default'];
-}).call(this,require('_process'))
-},{"../../helpers/DOM.helpers":249,"../../helpers/math.helpers":250,"../../helpers/misc.helpers":251,"../../utils":253,"./Trend.helpers":246,"_process":103,"prop-types":108,"react":279}],248:[function(require,module,exports){
-'use strict';
-
-exports.__esModule = true;
-
-var _Trend = require('./Trend');
-
-Object.defineProperty(exports, 'default', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_Trend).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = exports['default'];
-},{"./Trend":247}],249:[function(require,module,exports){
-'use strict';
-
-exports.__esModule = true;
-exports.injectStyleTag = exports.buildSmoothPath = exports.buildLinearPath = undefined;
-
-var _math = require('./math.helpers');
-
-var buildLinearPath = exports.buildLinearPath = function buildLinearPath(data) {
-  return data.reduce(function (path, _ref, index) {
-    var x = _ref.x,
-        y = _ref.y;
-
-    // The very first instruction needs to be a "move".
-    // The rest will be a "line".
-    var isFirstInstruction = index === 0;
-    var instruction = isFirstInstruction ? 'M' : 'L';
-
-    return '' + path + instruction + ' ' + x + ',' + y + '\n';
-  }, '');
-};
-
-var buildSmoothPath = exports.buildSmoothPath = function buildSmoothPath(data, _ref2) {
-  var radius = _ref2.radius;
-  var firstPoint = data[0],
-      otherPoints = data.slice(1);
-
-
-  return otherPoints.reduce(function (path, point, index) {
-    var next = otherPoints[index + 1];
-    var prev = otherPoints[index - 1] || firstPoint;
-
-    var isCollinear = next && (0, _math.checkForCollinearPoints)(prev, point, next);
-
-    if (!next || isCollinear) {
-      // The very last line in the sequence can just be a regular line.
-      return path + '\nL ' + point.x + ',' + point.y;
-    }
-
-    var distanceFromPrev = (0, _math.getDistanceBetween)(prev, point);
-    var distanceFromNext = (0, _math.getDistanceBetween)(next, point);
-    var threshold = Math.min(distanceFromPrev, distanceFromNext);
-
-    var isTooCloseForRadius = threshold / 2 < radius;
-
-    var radiusForPoint = isTooCloseForRadius ? threshold / 2 : radius;
-
-    var before = (0, _math.moveTo)(prev, point, radiusForPoint);
-    var after = (0, _math.moveTo)(next, point, radiusForPoint);
-
-    return [path, 'L ' + before.x + ',' + before.y, 'S ' + point.x + ',' + point.y + ' ' + after.x + ',' + after.y].join('\n');
-  }, 'M ' + firstPoint.x + ',' + firstPoint.y);
-};
-
-// Taken from Khan Academy's Aphrodite
-// https://github.com/Khan/aphrodite/blob/master/src/inject.js
-var styleTag = void 0;
-var injectStyleTag = exports.injectStyleTag = function injectStyleTag(cssContents) {
-  if (styleTag == null) {
-    // Try to find a style tag with the `data-react-trend` attribute first.
-    styleTag = document.querySelector('style[data-react-trend]');
-
-    // If that doesn't work, generate a new style tag.
-    if (styleTag == null) {
-      // Taken from
-      // http://stackoverflow.com/questions/524696/how-to-create-a-style-tag-with-javascript
-      var head = document.head || document.getElementsByTagName('head')[0];
-      styleTag = document.createElement('style');
-
-      styleTag.type = 'text/css';
-      styleTag.setAttribute('data-react-trend', '');
-      head.appendChild(styleTag);
-    }
-  }
-
-  styleTag.appendChild(document.createTextNode(cssContents));
-};
-},{"./math.helpers":250}],250:[function(require,module,exports){
-"use strict";
-
-exports.__esModule = true;
-/* eslint-disable no-restricted-properties */
-
-/** normalize
- * This lets us translate a value from one scale to another.
- *
- * @param {Number} value - Our initial value to translate
- * @param {Number} min - the current minimum value possible
- * @param {Number} max - the current maximum value possible
- * @param {Number} scaleMin - the min value of the scale we're translating to
- * @param {Number} scaleMax - the max value of the scale we're translating to
- *
- * @returns {Number} the value on its new scale
- */
-var normalize = exports.normalize = function normalize(_ref) {
-  var value = _ref.value,
-      min = _ref.min,
-      max = _ref.max,
-      _ref$scaleMin = _ref.scaleMin,
-      scaleMin = _ref$scaleMin === undefined ? 0 : _ref$scaleMin,
-      _ref$scaleMax = _ref.scaleMax,
-      scaleMax = _ref$scaleMax === undefined ? 1 : _ref$scaleMax;
-
-  // If the `min` and `max` are the same value, it means our dataset is flat.
-  // For now, let's assume that flat data should be aligned to the bottom.
-  if (min === max) {
-    return scaleMin;
-  }
-
-  return scaleMin + (value - min) * (scaleMax - scaleMin) / (max - min);
-};
-
-/** moveTo
- * the coordinate that lies at a midpoint between 2 lines, based on the radius
- *
- * @param {Object} to - Our initial point
- * @param {Number} to.x - The x value of our initial point
- * @param {Number} to.y - The y value of our initial point
- * @param {Object} from - Our final point
- * @param {Number} from.x - The x value of our final point
- * @param {Number} from.y - The y value of our final point
- * @param {Number} radius - The distance away from the final point
- *
- * @returns {Object} an object holding the x/y coordinates of the midpoint.
- */
-var moveTo = exports.moveTo = function moveTo(to, from, radius) {
-  var vector = { x: to.x - from.x, y: to.y - from.y };
-  var length = Math.sqrt(vector.x * vector.x + vector.y * vector.y);
-  var unitVector = { x: vector.x / length, y: vector.y / length };
-
-  return {
-    x: from.x + unitVector.x * radius,
-    y: from.y + unitVector.y * radius
-  };
-};
-
-/** getDistanceBetween
- * Simple formula derived from pythagoras to calculate the distance between
- * 2 points on a plane.
- *
- * @param {Object} p1 - Our initial point
- * @param {Number} p1.x - The x value of our initial point
- * @param {Number} p1.y - The y value of our initial point
- * @param {Object} p2 - Our final point
- * @param {Number} p2.x - The x value of our final point
- * @param {Number} p2.y - The y value of our final point
- *
- * @returns {Number} the distance between the points.
- */
-var getDistanceBetween = exports.getDistanceBetween = function getDistanceBetween(p1, p2) {
-  return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
-};
-
-/** checkForCollinearPoints
- * Figure out if the midpoint fits perfectly on a line between the two others.
- *
- * @param {Object} p1 - Our initial point
- * @param {Number} p1.x - The x value of our initial point
- * @param {Number} p1.y - The y value of our initial point
- * @param {Object} p2 - Our mid-point
- * @param {Number} p2.x - The x value of our mid-point
- * @param {Number} p2.y - The y value of our mid-point
- * @param {Object} p3 - Our final point
- * @param {Number} p3.x - The x value of our final point
- * @param {Number} p3.y - The y value of our final point
-
- * @returns {Boolean} whether or not p2 sits on the line between p1 and p3.
- */
-var checkForCollinearPoints = exports.checkForCollinearPoints = function checkForCollinearPoints(p1, p2, p3) {
-  return (p1.y - p2.y) * (p1.x - p3.x) === (p1.y - p3.y) * (p1.x - p2.x);
-};
-},{}],251:[function(require,module,exports){
-"use strict";
-
-exports.__esModule = true;
-// eslint-disable-next-line no-restricted-properties
-var generateId = exports.generateId = function generateId() {
-  return Math.round(Math.random() * Math.pow(10, 16));
-};
-},{}],252:[function(require,module,exports){
-'use strict';
-
-exports.__esModule = true;
-
-var _Trend = require('./components/Trend');
-
-Object.defineProperty(exports, 'default', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_Trend).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = exports['default'];
-},{"./components/Trend":248}],253:[function(require,module,exports){
-"use strict";
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var range = exports.range = function range(to) {
-  return [].concat(Array(to).keys());
-};
-
-var pick = exports.pick = function pick(obj, keys) {
-  return keys.reduce(function (acc, key) {
-    var _extends2;
-
-    return _extends({}, acc, (_extends2 = {}, _extends2[key] = obj[key], _extends2));
-  }, {});
-};
-
-var omit = exports.omit = function omit(obj, keys) {
-  return Object.keys(obj).reduce(function (acc, key) {
-    var _extends3;
-
-    if (keys.indexOf(key) !== -1) {
-      return acc;
-    }
-
-    return _extends({}, acc, (_extends3 = {}, _extends3[key] = obj[key], _extends3));
-  }, {});
-};
-},{}],254:[function(require,module,exports){
 arguments[4][133][0].apply(exports,arguments)
-},{"dup":133}],255:[function(require,module,exports){
+},{"dup":133}],247:[function(require,module,exports){
 arguments[4][135][0].apply(exports,arguments)
-},{"./reactProdInvariant":277,"_process":103,"dup":135,"fbjs/lib/invariant":91}],256:[function(require,module,exports){
+},{"./reactProdInvariant":269,"_process":103,"dup":135,"fbjs/lib/invariant":91}],248:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -40701,7 +40169,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactChildren":257,"./ReactClass":258,"./ReactComponent":259,"./ReactDOMFactories":262,"./ReactElement":263,"./ReactElementValidator":265,"./ReactPropTypes":268,"./ReactPureComponent":270,"./ReactVersion":271,"./canDefineProperty":272,"./onlyChild":276,"_process":103,"fbjs/lib/warning":98,"object-assign":102}],257:[function(require,module,exports){
+},{"./ReactChildren":249,"./ReactClass":250,"./ReactComponent":251,"./ReactDOMFactories":254,"./ReactElement":255,"./ReactElementValidator":257,"./ReactPropTypes":260,"./ReactPureComponent":262,"./ReactVersion":263,"./canDefineProperty":264,"./onlyChild":268,"_process":103,"fbjs/lib/warning":98,"object-assign":102}],249:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40892,7 +40360,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":255,"./ReactElement":263,"./traverseAllChildren":278,"fbjs/lib/emptyFunction":83}],258:[function(require,module,exports){
+},{"./PooledClass":247,"./ReactElement":255,"./traverseAllChildren":270,"fbjs/lib/emptyFunction":83}],250:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -41617,7 +41085,7 @@ var ReactClass = {
 
 module.exports = ReactClass;
 }).call(this,require('_process'))
-},{"./ReactComponent":259,"./ReactElement":263,"./ReactNoopUpdateQueue":266,"./ReactPropTypeLocationNames":267,"./reactProdInvariant":277,"_process":103,"fbjs/lib/emptyObject":84,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"object-assign":102}],259:[function(require,module,exports){
+},{"./ReactComponent":251,"./ReactElement":255,"./ReactNoopUpdateQueue":258,"./ReactPropTypeLocationNames":259,"./reactProdInvariant":269,"_process":103,"fbjs/lib/emptyObject":84,"fbjs/lib/invariant":91,"fbjs/lib/warning":98,"object-assign":102}],251:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -41737,7 +41205,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactComponent;
 }).call(this,require('_process'))
-},{"./ReactNoopUpdateQueue":266,"./canDefineProperty":272,"./reactProdInvariant":277,"_process":103,"fbjs/lib/emptyObject":84,"fbjs/lib/invariant":91,"fbjs/lib/warning":98}],260:[function(require,module,exports){
+},{"./ReactNoopUpdateQueue":258,"./canDefineProperty":264,"./reactProdInvariant":269,"_process":103,"fbjs/lib/emptyObject":84,"fbjs/lib/invariant":91,"fbjs/lib/warning":98}],252:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -42073,7 +41541,7 @@ var ReactComponentTreeHook = {
 
 module.exports = ReactComponentTreeHook;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":261,"./reactProdInvariant":277,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98}],261:[function(require,module,exports){
+},{"./ReactCurrentOwner":253,"./reactProdInvariant":269,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98}],253:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -42104,7 +41572,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],262:[function(require,module,exports){
+},{}],254:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -42276,7 +41744,7 @@ var ReactDOMFactories = {
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-},{"./ReactElement":263,"./ReactElementValidator":265,"_process":103}],263:[function(require,module,exports){
+},{"./ReactElement":255,"./ReactElementValidator":257,"_process":103}],255:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -42619,9 +42087,9 @@ ReactElement.isValidElement = function (object) {
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":261,"./ReactElementSymbol":264,"./canDefineProperty":272,"_process":103,"fbjs/lib/warning":98,"object-assign":102}],264:[function(require,module,exports){
+},{"./ReactCurrentOwner":253,"./ReactElementSymbol":256,"./canDefineProperty":264,"_process":103,"fbjs/lib/warning":98,"object-assign":102}],256:[function(require,module,exports){
 arguments[4][162][0].apply(exports,arguments)
-},{"dup":162}],265:[function(require,module,exports){
+},{"dup":162}],257:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -42876,7 +42344,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":260,"./ReactCurrentOwner":261,"./ReactElement":263,"./canDefineProperty":272,"./checkReactTypeSpec":273,"./getIteratorFn":274,"_process":103,"fbjs/lib/warning":98}],266:[function(require,module,exports){
+},{"./ReactComponentTreeHook":252,"./ReactCurrentOwner":253,"./ReactElement":255,"./canDefineProperty":264,"./checkReactTypeSpec":265,"./getIteratorFn":266,"_process":103,"fbjs/lib/warning":98}],258:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -42974,9 +42442,9 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-},{"_process":103,"fbjs/lib/warning":98}],267:[function(require,module,exports){
+},{"_process":103,"fbjs/lib/warning":98}],259:[function(require,module,exports){
 arguments[4][180][0].apply(exports,arguments)
-},{"_process":103,"dup":180}],268:[function(require,module,exports){
+},{"_process":103,"dup":180}],260:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -42995,9 +42463,9 @@ var _require = require('./ReactElement'),
 var factory = require('prop-types/factory');
 
 module.exports = factory(isValidElement);
-},{"./ReactElement":263,"prop-types/factory":105}],269:[function(require,module,exports){
+},{"./ReactElement":255,"prop-types/factory":105}],261:[function(require,module,exports){
 arguments[4][181][0].apply(exports,arguments)
-},{"dup":181}],270:[function(require,module,exports){
+},{"dup":181}],262:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -43039,7 +42507,7 @@ _assign(ReactPureComponent.prototype, ReactComponent.prototype);
 ReactPureComponent.prototype.isPureReactComponent = true;
 
 module.exports = ReactPureComponent;
-},{"./ReactComponent":259,"./ReactNoopUpdateQueue":266,"fbjs/lib/emptyObject":84,"object-assign":102}],271:[function(require,module,exports){
+},{"./ReactComponent":251,"./ReactNoopUpdateQueue":258,"fbjs/lib/emptyObject":84,"object-assign":102}],263:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -43053,7 +42521,7 @@ module.exports = ReactPureComponent;
 'use strict';
 
 module.exports = '15.5.4';
-},{}],272:[function(require,module,exports){
+},{}],264:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -43081,7 +42549,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-},{"_process":103}],273:[function(require,module,exports){
+},{"_process":103}],265:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -43170,9 +42638,9 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":260,"./ReactPropTypeLocationNames":267,"./ReactPropTypesSecret":269,"./reactProdInvariant":277,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98}],274:[function(require,module,exports){
+},{"./ReactComponentTreeHook":252,"./ReactPropTypeLocationNames":259,"./ReactPropTypesSecret":261,"./reactProdInvariant":269,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98}],266:[function(require,module,exports){
 arguments[4][222][0].apply(exports,arguments)
-},{"dup":222}],275:[function(require,module,exports){
+},{"dup":222}],267:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -43193,7 +42661,7 @@ function getNextDebugID() {
 }
 
 module.exports = getNextDebugID;
-},{}],276:[function(require,module,exports){
+},{}],268:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -43233,9 +42701,9 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-},{"./ReactElement":263,"./reactProdInvariant":277,"_process":103,"fbjs/lib/invariant":91}],277:[function(require,module,exports){
+},{"./ReactElement":255,"./reactProdInvariant":269,"_process":103,"fbjs/lib/invariant":91}],269:[function(require,module,exports){
 arguments[4][231][0].apply(exports,arguments)
-},{"dup":231}],278:[function(require,module,exports){
+},{"dup":231}],270:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -43413,12 +42881,12 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":254,"./ReactCurrentOwner":261,"./ReactElementSymbol":264,"./getIteratorFn":274,"./reactProdInvariant":277,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98}],279:[function(require,module,exports){
+},{"./KeyEscapeUtils":246,"./ReactCurrentOwner":253,"./ReactElementSymbol":256,"./getIteratorFn":266,"./reactProdInvariant":269,"_process":103,"fbjs/lib/invariant":91,"fbjs/lib/warning":98}],271:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":256}],280:[function(require,module,exports){
+},{"./lib/React":248}],272:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43482,9 +42950,11 @@ var Column = exports.Column = function Column(props) {
 };
 
 var Box = exports.Box = function Box(props) {
+    var extraClass = props.className ? props.className : '';
+
     return _react2.default.createElement(
         "div",
-        { className: "box" },
+        { className: 'box ' + extraClass },
         _react2.default.createElement(
             "article",
             { className: "media" },
@@ -43537,11 +43007,20 @@ var Title = exports.Title = function Title(props) {
                     props.children
                 );
             }
+        case 'strong':
+            {
+                return _react2.default.createElement(
+                    "strong",
+                    null,
+                    props.children,
+                    _react2.default.createElement("hr", null)
+                );
+            }
     }
 };
 
-},{"react":279}],281:[function(require,module,exports){
-'use strict';
+},{"react":271}],273:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -43549,13 +43028,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactTrend = require('react-trend');
+var _Html = require("../../Common/Html");
 
-var _reactTrend2 = _interopRequireDefault(_reactTrend);
+var _moment = require("moment");
+
+var _moment2 = _interopRequireDefault(_moment);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43575,81 +43056,67 @@ var BestRatedTopics = function (_React$Component) {
     }
 
     _createClass(BestRatedTopics, [{
-        key: 'render',
+        key: "render",
         value: function render() {
-            if (typeof this.props.data.trends === 'undefined') {
+            if (typeof this.props.data === 'undefined') {
                 return false;
             }
 
             return _react2.default.createElement(
-                'div',
-                { className: 'box' },
+                _Html.Box,
+                { className: "BestRatedTopics" },
                 _react2.default.createElement(
-                    'article',
-                    { className: 'media' },
+                    _Html.Title,
+                    { heading: 'strong' },
+                    "Best rated topics",
                     _react2.default.createElement(
-                        'div',
-                        { className: 'media-content' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'content' },
-                            _react2.default.createElement(
-                                'strong',
-                                null,
-                                'Most rated topics'
-                            ),
-                            _react2.default.createElement('hr', null),
-                            _react2.default.createElement(
-                                'table',
-                                { className: 'table is-narrow' },
+                        "span",
+                        { className: "is-pulled-right has-text-primary" },
+                        (0, _moment2.default)().format('MMMM')
+                    )
+                ),
+                _react2.default.createElement(
+                    "table",
+                    { className: "table" },
+                    _react2.default.createElement(
+                        "tbody",
+                        null,
+                        this.props.data.map(function (topic, index) {
+                            return _react2.default.createElement(
+                                "tr",
+                                { key: index },
                                 _react2.default.createElement(
-                                    'tbody',
-                                    null,
-                                    this.props.data.trends.map(function (trend, index) {
-                                        return _react2.default.createElement(
-                                            'tr',
-                                            { key: index },
-                                            _react2.default.createElement(
-                                                'td',
-                                                { width: '60%' },
-                                                _react2.default.createElement(
-                                                    'b',
-                                                    null,
-                                                    '#',
-                                                    index + 1
-                                                ),
-                                                ' ',
-                                                trend.name
-                                            ),
-                                            _react2.default.createElement(
-                                                'td',
-                                                null,
-                                                _react2.default.createElement(_reactTrend2.default, {
-                                                    smooth: true,
-                                                    autoDraw: true,
-                                                    autoDrawDuration: 2200,
-                                                    autoDrawEasing: 'ease-out',
-                                                    data: trend.data,
-                                                    gradient: ['#09fb7b', '#0dbd30'],
-                                                    radius: 17,
-                                                    strokeWidth: 2.8,
-                                                    strokeLinecap: 'round'
-                                                })
-                                            )
-                                        );
-                                    })
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'has-text-centered' },
+                                    "td",
+                                    { width: "60%" },
+                                    _react2.default.createElement(
+                                        "b",
+                                        null,
+                                        index + 1
+                                    ),
+                                    " ",
+                                    topic.key
+                                ),
                                 _react2.default.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    'Show all'
+                                    "td",
+                                    { className: "has-text-right" },
+                                    topic.doc_count
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    { className: "has-text-right" },
+                                    topic.score
                                 )
-                            )
-                        )
+                            );
+                        })
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "has-text-centered" },
+                    _react2.default.createElement(
+                        "a",
+                        { href: "#" },
+                        "Show all"
                     )
                 )
             );
@@ -43661,7 +43128,7 @@ var BestRatedTopics = function (_React$Component) {
 
 exports.default = BestRatedTopics;
 
-},{"react":279,"react-trend":252}],282:[function(require,module,exports){
+},{"../../Common/Html":272,"moment":101,"react":271}],274:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -43677,6 +43144,8 @@ var _react2 = _interopRequireDefault(_react);
 var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
+
+var _Html = require('../../Common/Html');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43696,17 +43165,17 @@ var LatestPost = function (_React$Component) {
     }
 
     _createClass(LatestPost, [{
-        key: 'fromUnixToRelativeTime',
-        value: function fromUnixToRelativeTime(date) {
-            var datetime = _moment2.default.unix(date).format("MM/DD/YYYY hh:mm:ss a");
-
-            return (0, _moment2.default)(datetime, "MM/DD/YYYY hh:mm:ss a").fromNow();
+        key: 'toRelativeTime',
+        value: function toRelativeTime(date) {
+            return (0, _moment2.default)(date).fromNow();
         }
     }, {
         key: 'render',
         value: function render() {
             var _props$data = this.props.data,
                 content = _props$data.content,
+                tags = _props$data.tags,
+                score = _props$data.score,
                 created_at = _props$data.created_at,
                 source = _props$data.source;
 
@@ -43716,45 +43185,63 @@ var LatestPost = function (_React$Component) {
             }
 
             return _react2.default.createElement(
-                'div',
-                { className: 'box' },
+                _Html.Box,
+                { className: 'LatestPost' },
                 _react2.default.createElement(
-                    'article',
-                    { className: 'media' },
+                    _Html.Title,
+                    { heading: 'strong' },
+                    'Latest post'
+                ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    content
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'columns' },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'media-content' },
+                        _Html.Column,
+                        null,
+                        tags.map(function (tag, index) {
+                            return _react2.default.createElement(
+                                'span',
+                                { key: index,
+                                    className: 'tag is-success is-small' },
+                                tag
+                            );
+                        })
+                    ),
+                    _react2.default.createElement(
+                        _Html.Column,
+                        null,
                         _react2.default.createElement(
-                            'div',
-                            { className: 'content' },
+                            'span',
+                            { className: 'tag is-warning is-small is-pulled-right' },
+                            'Score ',
                             _react2.default.createElement(
-                                'strong',
+                                'b',
                                 null,
-                                'Latest Post'
-                            ),
-                            _react2.default.createElement('hr', null),
-                            _react2.default.createElement(
-                                'p',
-                                null,
-                                content
-                            ),
-                            _react2.default.createElement(
-                                'small',
-                                { className: 'is-primary' },
-                                this.fromUnixToRelativeTime(created_at),
-                                ' \xB7 '
-                            ),
-                            _react2.default.createElement(
-                                'small',
-                                null,
-                                'Source: ',
-                                _react2.default.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    source
-                                )
+                                ' ',
+                                score
                             )
                         )
+                    )
+                ),
+                _react2.default.createElement(
+                    'small',
+                    { className: 'is-primary' },
+                    this.toRelativeTime(created_at.date),
+                    ' \xB7 '
+                ),
+                _react2.default.createElement(
+                    'small',
+                    null,
+                    'Source: ',
+                    _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        source
                     )
                 )
             );
@@ -43766,8 +43253,8 @@ var LatestPost = function (_React$Component) {
 
 exports.default = LatestPost;
 
-},{"moment":101,"react":279}],283:[function(require,module,exports){
-'use strict';
+},{"../../Common/Html":272,"moment":101,"react":271}],275:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -43775,15 +43262,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactTrend = require('react-trend');
-
-var _reactTrend2 = _interopRequireDefault(_reactTrend);
-
-var _TopicDetail = require('./TopicDetail');
+var _TopicDetail = require("./TopicDetail");
 
 var _TopicDetail2 = _interopRequireDefault(_TopicDetail);
 
@@ -43813,47 +43296,36 @@ var Topic = function (_React$Component) {
     }
 
     _createClass(Topic, [{
-        key: 'handleOpenModal',
+        key: "handleOpenModal",
         value: function handleOpenModal() {
             this.setState({ showModal: true });
         }
     }, {
-        key: 'handleCloseModal',
+        key: "handleCloseModal",
         value: function handleCloseModal() {
             this.setState({ showModal: false });
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'tr',
+                "tr",
                 { onClick: this.handleOpenModal },
                 _react2.default.createElement(
-                    'td',
-                    { width: '60%' },
+                    "td",
+                    { width: "60%" },
                     _react2.default.createElement(
-                        'b',
+                        "b",
                         null,
-                        '#',
                         this.props.index + 1
                     ),
-                    ' ',
-                    this.props.trend.name
+                    " ",
+                    this.props.topic.key
                 ),
                 _react2.default.createElement(
-                    'td',
-                    null,
-                    _react2.default.createElement(_reactTrend2.default, {
-                        smooth: true,
-                        autoDraw: true,
-                        autoDrawDuration: 2200,
-                        autoDrawEasing: 'ease-out',
-                        data: this.props.trend.data,
-                        gradient: ['#09fb7b', '#0dbd30'],
-                        radius: 17,
-                        strokeWidth: 2.8,
-                        strokeLinecap: 'round'
-                    })
+                    "td",
+                    { className: "has-text-right" },
+                    this.props.topic.doc_count
                 ),
                 _react2.default.createElement(_TopicDetail2.default, {
                     onCloseModal: this.handleCloseModal,
@@ -43868,7 +43340,7 @@ var Topic = function (_React$Component) {
 
 exports.default = Topic;
 
-},{"./TopicDetail":284,"react":279,"react-trend":252}],284:[function(require,module,exports){
+},{"./TopicDetail":276,"react":271}],276:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -43913,7 +43385,7 @@ var TopicDetail = function (_React$Component) {
                 initial: '1497537585',
                 final: '1497537585'
             },
-            chart_data: [10, 30, 50, 60]
+            chart_data: [10, 30, 50, 60, 40]
         };
         return _this;
     }
@@ -43922,12 +43394,12 @@ var TopicDetail = function (_React$Component) {
         key: 'render',
         value: function render() {
             var chartData = {
-                labels: ['', '', '', ''],
+                labels: ['January', 'January', 'January', 'February', 'February'],
                 responsive: true,
                 datasets: [{
                     label: '',
                     fill: false,
-                    borderColor: 'rgba(75,192,192,1)',
+                    borderColor: '#23d160',
                     data: this.state.chart_data
                 }]
             };
@@ -43969,7 +43441,7 @@ var TopicDetail = function (_React$Component) {
 
 exports.default = TopicDetail;
 
-},{"../../../Common/Html":280,"../../../config":291,"react":279,"react-chartjs-2":110,"react-modal":245}],285:[function(require,module,exports){
+},{"../../../Common/Html":272,"../../../config":283,"react":271,"react-chartjs-2":110,"react-modal":245}],277:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43987,6 +43459,10 @@ var _Topic = require("./Topic");
 var _Topic2 = _interopRequireDefault(_Topic);
 
 var _Html = require("../../../Common/Html");
+
+var _moment = require("moment");
+
+var _moment2 = _interopRequireDefault(_moment);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44008,29 +43484,33 @@ var TrendingTopics = function (_React$Component) {
     _createClass(TrendingTopics, [{
         key: "render",
         value: function render() {
-            if (typeof this.props.data.trends === 'undefined') {
+            if (typeof this.props.data === 'undefined') {
                 return false;
             }
 
             return _react2.default.createElement(
                 _Html.Box,
-                null,
+                { className: "TrendingTopics" },
                 _react2.default.createElement(
-                    "strong",
-                    null,
-                    "Latest trending topics"
+                    _Html.Title,
+                    { heading: 'strong' },
+                    "Latest trending topics",
+                    _react2.default.createElement(
+                        "span",
+                        { className: "is-pulled-right has-text-primary" },
+                        (0, _moment2.default)().format('MMMM')
+                    )
                 ),
-                _react2.default.createElement("hr", null),
                 _react2.default.createElement(
                     "table",
-                    { className: "table is-narrow" },
+                    { className: "table" },
                     _react2.default.createElement(
                         "tbody",
                         null,
-                        this.props.data.trends.map(function (trend, index) {
+                        this.props.data.map(function (topic, index) {
                             return _react2.default.createElement(_Topic2.default, {
                                 key: index,
-                                trend: trend,
+                                topic: topic,
                                 index: index
                             });
                         })
@@ -44054,7 +43534,7 @@ var TrendingTopics = function (_React$Component) {
 
 exports.default = TrendingTopics;
 
-},{"../../../Common/Html":280,"./Topic":283,"react":279}],286:[function(require,module,exports){
+},{"../../../Common/Html":272,"./Topic":275,"moment":101,"react":271}],278:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44122,7 +43602,7 @@ var InsightsPage = function (_React$Component) {
         value: function fetchData() {
             var self = this;
 
-            _axios2.default.all([_axios2.default.get(_config.BASE_URL + '/most-spoken-topics'), _axios2.default.get(_config.BASE_URL + '/most-rated-topics'), _axios2.default.get(_config.BASE_URL + '/latest-post')]).then(_axios2.default.spread(function (mostSpokenTopicsResponse, mostRatedTopicsResponse, latestPostTopics) {
+            _axios2.default.all([_axios2.default.get(_config.BASE_URL + '/mostSpokenTopicsOfMonth'), _axios2.default.get(_config.BASE_URL + '/mostRatedTopicsOfTheMonth'), _axios2.default.get(_config.BASE_URL + '/lastPost')]).then(_axios2.default.spread(function (mostSpokenTopicsResponse, mostRatedTopicsResponse, latestPostTopics) {
                 self.setState({
                     'isFetching': false,
                     'mostSpokenTopics': mostSpokenTopicsResponse.data,
@@ -44194,7 +43674,7 @@ var InsightsPage = function (_React$Component) {
 
 exports.default = InsightsPage;
 
-},{"../Common/Html":280,"../config":291,"./Insights/BestRatedTopics":281,"./Insights/LatestPost":282,"./Insights/TrendingTopicsBlock/TrendingTopics":285,"axios":1,"react":279}],287:[function(require,module,exports){
+},{"../Common/Html":272,"../config":283,"./Insights/BestRatedTopics":273,"./Insights/LatestPost":274,"./Insights/TrendingTopicsBlock/TrendingTopics":277,"axios":1,"react":271}],279:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -44244,7 +43724,7 @@ var Main = function (_React$Component) {
 
 exports.default = Main;
 
-},{"react":279}],288:[function(require,module,exports){
+},{"react":271}],280:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -44325,7 +43805,7 @@ var Input = function (_React$Component) {
 
 exports.default = Input;
 
-},{"react":279}],289:[function(require,module,exports){
+},{"react":271}],281:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44339,6 +43819,8 @@ var _react = require("react");
 var _react2 = _interopRequireDefault(_react);
 
 var _Html = require("../Common/Html");
+
+var _reactChartjs = require("react-chartjs-2");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44358,11 +43840,6 @@ var Result = function (_React$Component) {
     }
 
     _createClass(Result, [{
-        key: "getRawMarkup",
-        value: function getRawMarkup() {
-            return { __html: this.props.searchResult.msg };
-        }
-    }, {
         key: "render",
         value: function render() {
             if (this.props.fetching === true) {
@@ -44389,6 +43866,23 @@ var Result = function (_React$Component) {
                 );
             }
 
+            var _props$searchResult = this.props.searchResult,
+                searched_word = _props$searchResult.searched_word,
+                number_searched_word = _props$searchResult.number_searched_word,
+                evolution_searched_word = _props$searchResult.evolution_searched_word;
+
+
+            var chartData = {
+                labels: ['January', 'January', 'January', 'February', 'February'],
+                responsive: true,
+                datasets: [{
+                    label: '',
+                    fill: false,
+                    borderColor: '#23d160',
+                    data: evolution_searched_word.data_chart
+                }]
+            };
+
             return _react2.default.createElement(
                 _Html.Column,
                 null,
@@ -44396,15 +43890,23 @@ var Result = function (_React$Component) {
                     _Html.Box,
                     null,
                     _react2.default.createElement(
-                        "p",
-                        null,
+                        _Html.Title,
+                        {
+                            heading: 'h3',
+                            className: "is-marginless"
+                        },
+                        "#",
+                        searched_word,
                         _react2.default.createElement(
-                            "strong",
-                            null,
-                            "Result box"
+                            "span",
+                            { className: "tag is-info is-small is-pulled-right" },
+                            "Searched times ",
+                            number_searched_word
                         )
                     ),
-                    _react2.default.createElement("p", { dangerouslySetInnerHTML: this.getRawMarkup() })
+                    _react2.default.createElement(_reactChartjs.Line, {
+                        height: 75,
+                        data: chartData })
                 )
             );
         }
@@ -44415,7 +43917,7 @@ var Result = function (_React$Component) {
 
 exports.default = Result;
 
-},{"../Common/Html":280,"react":279}],290:[function(require,module,exports){
+},{"../Common/Html":272,"react":271,"react-chartjs-2":110}],282:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44472,6 +43974,7 @@ var SearchPage = function (_React$Component) {
         key: "fetchSearchRequest",
         value: function fetchSearchRequest() {
             var self = this;
+            // const url = BASE_URL + '/searchInPosts';
             var url = _config.BASE_URL + '/search-data';
             self.setState({
                 isFetching: true
@@ -44512,7 +44015,7 @@ var SearchPage = function (_React$Component) {
 
 exports.default = SearchPage;
 
-},{"../Common/Html":280,"../config":291,"./Input":288,"./Result":289,"axios":1,"react":279}],291:[function(require,module,exports){
+},{"../Common/Html":272,"../config":283,"./Input":280,"./Result":281,"axios":1,"react":271}],283:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -44523,7 +44026,9 @@ Object.defineProperty(exports, "__esModule", {
  * For global vars and constants
  */
 
-var BASE_URL = exports.BASE_URL = 'http://demo7967671.mockable.io';
+// export const BASE_URL = 'http://demo7967671.mockable.io';
+var BASE_URL = exports.BASE_URL = 'http://demo5102603.mockable.io/';
+// export const BASE_URL = '176.34.149.205';
 
 var modalCustomPageStyle = exports.modalCustomPageStyle = {
     overlay: {
@@ -44541,7 +44046,7 @@ var modalCustomPageStyle = exports.modalCustomPageStyle = {
     }
 };
 
-},{}],292:[function(require,module,exports){
+},{}],284:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -44607,4 +44112,4 @@ document.querySelector('.nav-toggle').addEventListener('click', function (event)
     }
 });
 
-},{"./Insights/InsightsPage":286,"./Main":287,"./Search/SearchPage":290,"react":279,"react-dom":111}]},{},[280,281,282,283,284,285,286,287,288,289,290,291,292]);
+},{"./Insights/InsightsPage":278,"./Main":279,"./Search/SearchPage":282,"react":271,"react-dom":111}]},{},[272,273,274,275,276,277,278,279,280,281,282,283,284]);

@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import {Box, Column, ColumnsSection} from "../../Common/Html";
+import {Box, Column, Title} from "../../Common/Html";
 
 class LatestPost extends React.Component {
     constructor(props) {
@@ -25,9 +25,11 @@ class LatestPost extends React.Component {
         }
 
         return (
-            <Box>
-                <strong>Latest Post</strong>
-                <hr />
+            <Box className="LatestPost">
+                <Title heading={'strong'}>
+                    Latest post
+                </Title>
+
                 <p>{content}</p>
 
                 <div className="columns">
