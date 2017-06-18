@@ -1,6 +1,6 @@
 import React from 'react';
-import Trend from 'react-trend';
 import Topic from "./Topic";
+import {Box} from "../../../Common/Html";
 
 class TrendingTopics extends React.Component {
     constructor(props) {
@@ -13,31 +13,25 @@ class TrendingTopics extends React.Component {
         }
 
         return (
-            <div className="box">
-                <article className="media">
-                    <div className="media-content">
-                        <div className="content">
-                            <strong>Latest trending topics</strong>
-                            <hr />
-                            <table className="table is-narrow">
-                                <tbody>
-                                {this.props.data.trends.map((trend, index) =>
-                                    <Topic
-                                        key={index}
-                                        trend={trend}
-                                        index={index}
-                                    />
-                                )}
-                                </tbody>
-                            </table>
+            <Box>
+                <strong>Latest trending topics</strong>
+                <hr />
+                <table className="table is-narrow">
+                    <tbody>
+                    {this.props.data.trends.map((trend, index) =>
+                        <Topic
+                            key={index}
+                            trend={trend}
+                            index={index}
+                        />
+                    )}
+                    </tbody>
+                </table>
 
-                            <div className="has-text-centered">
-                                <a href="#">Show all</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
+                <div className="has-text-centered">
+                    <a href="#">Show all</a>
+                </div>
+            </Box>
         );
     }
 }

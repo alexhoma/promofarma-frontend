@@ -1,14 +1,29 @@
 import React from 'react';
 import Trend from 'react-trend';
+import TopicDetail from "./TopicDetail";
 
 class Topic extends React.Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
+        this.state = {
+            showModal: false
+        };
+
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
+    }
+
+    handleOpenModal() {
+        this.setState({ showModal: true });
+    }
+
+    handleCloseModal() {
+        this.setState({ showModal: false });
     }
 
     render() {
         return (
-            <tr>
+            <tr onClick={this.handleOpenModal}>
                 <td width="60%">
                     <b>#{this.props.index + 1}</b> {this.props.trend.name}
                 </td>
@@ -25,6 +40,12 @@ class Topic extends React.Component {
                         strokeLinecap={'round'}
                     />
                 </td>
+
+                {/*Topic detailed evolution*/}
+                <TopicDetail
+                    onCloseModal={this.handleCloseModal}
+                    modalState={this.state.showModal}
+                />
             </tr>
         )
     }

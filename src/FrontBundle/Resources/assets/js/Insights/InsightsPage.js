@@ -58,6 +58,7 @@ class InsightsPage extends React.Component {
         return (
             <section className="InsightsPage">
                 <Hero>Promofarma Trends</Hero>
+
                 {/*Result section*/}
                 {(this.state.isFetching === true)
                     ? (
