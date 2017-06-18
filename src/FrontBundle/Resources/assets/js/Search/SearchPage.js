@@ -1,8 +1,12 @@
 import React from 'react';
-import axios from 'axios';
-import { BASE_URL } from '../config';
+
 import Input from "./Input";
 import Result from "./Result";
+import {Hero} from "../Common/Html";
+
+import { BASE_URL } from '../config';
+import axios from 'axios';
+
 
 class SearchPage extends React.Component {
     constructor() {
@@ -33,23 +37,19 @@ class SearchPage extends React.Component {
         return (
             <section className="SearchPage">
                 {/*Hero with input on it*/}
-                <header className="hero is-success is-bold">
-                    <div className="hero-body">
-                        <div className="container has-text-centered">
-                            <h1 className="title">
-                                <Input onSearchAction={this.fetchSearchRequest} />
-                            </h1>
-                        </div>
-                    </div>
-                </header>
+                <Hero>
+                    <Input onSearchAction={this.fetchSearchRequest} />
+                </Hero>
 
                 {/*Result section*/}
                 <section className="section">
                     <div className="container">
-                        <Result
-                            searchResult={this.state.dataResponse}
-                            fetching={this.state.isFetching}
-                        />
+                        <div className="columns">
+                            <Result
+                                searchResult={this.state.dataResponse}
+                                fetching={this.state.isFetching}
+                            />
+                        </div>
                     </div>
                 </section>
             </section>

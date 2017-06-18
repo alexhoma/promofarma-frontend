@@ -1,7 +1,7 @@
 import React from 'react';
 import Trend from 'react-trend';
 
-class TrendigTopicDetail extends React.Component {
+class TopicDetail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -34,4 +34,4 @@ class TrendigTopicDetail extends React.Component {
     }
 }
 
-export default TrendigTopicDetail;
+export default TopicDetail;

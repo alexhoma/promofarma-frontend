@@ -1,4 +1,5 @@
 import React from 'react';
+import {Box, Column} from "../Common/Html";
 
 class Result extends React.Component {
     constructor(props) {
@@ -10,34 +11,32 @@ class Result extends React.Component {
     }
 
     render() {
-        let responseBox = <div/>;
-
         if (this.props.fetching === true) {
-            responseBox = (
-                <div className="columns">
-                    <div className="column">
-                        <span className="spinner" />
-                    </div>
-                </div>
+            return (
+                <Column>
+                    <span className="spinner" />
+                </Column>
             );
         }
 
-        if (this.props.searchResult !== '') {
-            responseBox = (
-                <div className="box">
-                    <article className="media">
-                        <div className="media-content">
-                            <div className="content">
-                                <p><strong>Result box</strong></p>
-                                <p dangerouslySetInnerHTML={this.getRawMarkup()} />
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            );
+        if (this.props.searchResult === '') {
+            return (
+                <Column>
+                    <Box>
+                        <p>No results</p>
+                    </Box>
+                </Column>
+            )
         }
 
-        return responseBox;
+        return (
+            <Column>
+                <Box>
+                    <p><strong>Result box</strong></p>
+                    <p dangerouslySetInnerHTML={this.getRawMarkup()} />
+                </Box>
+            </Column>
+        );
     }
 }
 

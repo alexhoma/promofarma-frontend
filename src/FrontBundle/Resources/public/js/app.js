@@ -27402,24 +27402,76 @@ module.exports = require('./lib/React');
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.Title = exports.Box = exports.Column = exports.ColumnsSection = exports.Hero = undefined;
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
  * Common Html elements
  * - Title (h1, h2, h3, h4)
  * - Hero
  */
 var Hero = exports.Hero = function Hero(props) {
-    return React.createElement(
+    return _react2.default.createElement(
         "header",
         { className: "hero is-success is-bold" },
-        React.createElement(
+        _react2.default.createElement(
             "div",
             { className: "hero-body" },
-            React.createElement(
+            _react2.default.createElement(
                 "div",
                 { className: "container has-text-centered" },
-                React.createElement(
+                _react2.default.createElement(
                     Title,
-                    { heading: 'h1' },
+                    { heading: 'h1', className: 'title' },
+                    props.children
+                )
+            )
+        )
+    );
+};
+
+var ColumnsSection = exports.ColumnsSection = function ColumnsSection(props) {
+    return _react2.default.createElement(
+        "section",
+        { className: "section" },
+        _react2.default.createElement(
+            "div",
+            { className: "container" },
+            _react2.default.createElement(
+                "div",
+                { className: "columns" },
+                props.children
+            )
+        )
+    );
+};
+
+var Column = exports.Column = function Column(props) {
+    return _react2.default.createElement(
+        "div",
+        { className: "column" },
+        props.children
+    );
+};
+
+var Box = exports.Box = function Box(props) {
+    return _react2.default.createElement(
+        "div",
+        { className: "box" },
+        _react2.default.createElement(
+            "article",
+            { className: "media" },
+            _react2.default.createElement(
+                "div",
+                { className: "media-content" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "content" },
                     props.children
                 )
             )
@@ -27433,7 +27485,7 @@ var Title = exports.Title = function Title(props) {
     switch (props.heading) {
         case 'h1':
             {
-                return React.createElement(
+                return _react2.default.createElement(
                     "h1",
                     { className: htmlClassName },
                     props.children
@@ -27441,7 +27493,7 @@ var Title = exports.Title = function Title(props) {
             }
         case 'h2':
             {
-                return React.createElement(
+                return _react2.default.createElement(
                     "h2",
                     { className: htmlClassName },
                     props.children
@@ -27449,7 +27501,7 @@ var Title = exports.Title = function Title(props) {
             }
         case 'h3':
             {
-                return React.createElement(
+                return _react2.default.createElement(
                     "h3",
                     { className: htmlClassName },
                     props.children
@@ -27457,7 +27509,7 @@ var Title = exports.Title = function Title(props) {
             }
         case 'h4':
             {
-                return React.createElement(
+                return _react2.default.createElement(
                     "h4",
                     { className: htmlClassName },
                     props.children
@@ -27466,7 +27518,7 @@ var Title = exports.Title = function Title(props) {
     }
 };
 
-},{}],221:[function(require,module,exports){
+},{"react":219}],221:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27793,13 +27845,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var TrendigTopicDetail = function (_React$Component) {
-    _inherits(TrendigTopicDetail, _React$Component);
+var TopicDetail = function (_React$Component) {
+    _inherits(TopicDetail, _React$Component);
 
-    function TrendigTopicDetail(props) {
-        _classCallCheck(this, TrendigTopicDetail);
+    function TopicDetail(props) {
+        _classCallCheck(this, TopicDetail);
 
-        var _this = _possibleConstructorReturn(this, (TrendigTopicDetail.__proto__ || Object.getPrototypeOf(TrendigTopicDetail)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (TopicDetail.__proto__ || Object.getPrototypeOf(TopicDetail)).call(this, props));
 
         _this.state = {
             'name': 'cremaSolar',
@@ -27812,7 +27864,7 @@ var TrendigTopicDetail = function (_React$Component) {
         return _this;
     }
 
-    _createClass(TrendigTopicDetail, [{
+    _createClass(TopicDetail, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -27838,10 +27890,10 @@ var TrendigTopicDetail = function (_React$Component) {
         }
     }]);
 
-    return TrendigTopicDetail;
+    return TopicDetail;
 }(_react2.default.Component);
 
-exports.default = TrendigTopicDetail;
+exports.default = TopicDetail;
 
 },{"react":219,"react-trend":192}],225:[function(require,module,exports){
 'use strict';
@@ -27967,6 +28019,8 @@ var _BestRatedTopics = require("./Insights/BestRatedTopics");
 
 var _BestRatedTopics2 = _interopRequireDefault(_BestRatedTopics);
 
+var _Html = require("../Common/Html");
+
 var _axios = require("axios");
 
 var _axios2 = _interopRequireDefault(_axios);
@@ -28030,84 +28084,45 @@ var InsightsPage = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
-            var hero = _react2.default.createElement(
-                "header",
-                { className: "hero is-success is-bold" },
-                _react2.default.createElement(
-                    "div",
-                    { className: "hero-body" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "container has-text-centered" },
-                        _react2.default.createElement(
-                            "h1",
-                            { className: "title" },
-                            "Promofarma Trends"
-                        )
-                    )
-                )
-            );
-
-            if (this.state.isFetching === true) {
-                return _react2.default.createElement(
-                    "section",
-                    { className: "InsightsPage" },
-                    hero,
-                    _react2.default.createElement(
-                        "section",
-                        { className: "section" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "container" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "columns" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "column" },
-                                    _react2.default.createElement("span", { className: "spinner" })
-                                )
-                            )
-                        )
-                    )
-                );
-            }
-
             return _react2.default.createElement(
                 "section",
                 { className: "InsightsPage" },
-                hero,
                 _react2.default.createElement(
-                    "section",
-                    { className: "section" },
+                    _Html.Hero,
+                    null,
+                    "Promofarma Trends"
+                ),
+                this.state.isFetching === true ? _react2.default.createElement(
+                    _Html.ColumnsSection,
+                    null,
                     _react2.default.createElement(
-                        "div",
-                        { className: "container" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "columns" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "column" },
-                                _react2.default.createElement(_TrendingTopics2.default, {
-                                    data: this.state.mostSpokenTopics
-                                })
-                            ),
-                            _react2.default.createElement(
-                                "div",
-                                { className: "column" },
-                                _react2.default.createElement(_BestRatedTopics2.default, {
-                                    data: this.state.mostRatedTopics
-                                })
-                            ),
-                            _react2.default.createElement(
-                                "div",
-                                { className: "column" },
-                                _react2.default.createElement(_LatestPost2.default, {
-                                    data: this.state.latestPost
-                                })
-                            )
-                        )
+                        _Html.Column,
+                        null,
+                        _react2.default.createElement("span", { className: "spinner" })
+                    )
+                ) : _react2.default.createElement(
+                    _Html.ColumnsSection,
+                    null,
+                    _react2.default.createElement(
+                        _Html.Column,
+                        null,
+                        _react2.default.createElement(_TrendingTopics2.default, {
+                            data: this.state.mostSpokenTopics
+                        })
+                    ),
+                    _react2.default.createElement(
+                        _Html.Column,
+                        null,
+                        _react2.default.createElement(_BestRatedTopics2.default, {
+                            data: this.state.mostRatedTopics
+                        })
+                    ),
+                    _react2.default.createElement(
+                        _Html.Column,
+                        null,
+                        _react2.default.createElement(_LatestPost2.default, {
+                            data: this.state.latestPost
+                        })
                     )
                 )
             );
@@ -28119,7 +28134,7 @@ var InsightsPage = function (_React$Component) {
 
 exports.default = InsightsPage;
 
-},{"../config":231,"./Insights/BestRatedTopics":221,"./Insights/LatestPost":222,"./Insights/TrendingTopicsBlock/TrendingTopics":225,"axios":1,"react":219}],227:[function(require,module,exports){
+},{"../Common/Html":220,"../config":231,"./Insights/BestRatedTopics":221,"./Insights/LatestPost":222,"./Insights/TrendingTopicsBlock/TrendingTopics":225,"axios":1,"react":219}],227:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28263,6 +28278,8 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Html = require("../Common/Html");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28288,50 +28305,48 @@ var Result = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
-            var responseBox = _react2.default.createElement("div", null);
-
             if (this.props.fetching === true) {
-                responseBox = _react2.default.createElement(
-                    "div",
-                    { className: "columns" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "column" },
-                        _react2.default.createElement("span", { className: "spinner" })
-                    )
+                return _react2.default.createElement(
+                    _Html.Column,
+                    null,
+                    _react2.default.createElement("span", { className: "spinner" })
                 );
             }
 
-            if (this.props.searchResult !== '') {
-                responseBox = _react2.default.createElement(
-                    "div",
-                    { className: "box" },
+            if (this.props.searchResult === '') {
+                return _react2.default.createElement(
+                    _Html.Column,
+                    null,
                     _react2.default.createElement(
-                        "article",
-                        { className: "media" },
+                        _Html.Box,
+                        null,
                         _react2.default.createElement(
-                            "div",
-                            { className: "media-content" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "content" },
-                                _react2.default.createElement(
-                                    "p",
-                                    null,
-                                    _react2.default.createElement(
-                                        "strong",
-                                        null,
-                                        "Result box"
-                                    )
-                                ),
-                                _react2.default.createElement("p", { dangerouslySetInnerHTML: this.getRawMarkup() })
-                            )
+                            "p",
+                            null,
+                            "No results"
                         )
                     )
                 );
             }
 
-            return responseBox;
+            return _react2.default.createElement(
+                _Html.Column,
+                null,
+                _react2.default.createElement(
+                    _Html.Box,
+                    null,
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        _react2.default.createElement(
+                            "strong",
+                            null,
+                            "Result box"
+                        )
+                    ),
+                    _react2.default.createElement("p", { dangerouslySetInnerHTML: this.getRawMarkup() })
+                )
+            );
         }
     }]);
 
@@ -28340,8 +28355,8 @@ var Result = function (_React$Component) {
 
 exports.default = Result;
 
-},{"react":219}],230:[function(require,module,exports){
-'use strict';
+},{"../Common/Html":220,"react":219}],230:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -28349,23 +28364,25 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = require('axios');
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _config = require('../config');
-
-var _Input = require('./Input');
+var _Input = require("./Input");
 
 var _Input2 = _interopRequireDefault(_Input);
 
-var _Result = require('./Result');
+var _Result = require("./Result");
 
 var _Result2 = _interopRequireDefault(_Result);
+
+var _Html = require("../Common/Html");
+
+var _config = require("../config");
+
+var _axios = require("axios");
+
+var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28392,7 +28409,7 @@ var SearchPage = function (_React$Component) {
     }
 
     _createClass(SearchPage, [{
-        key: 'fetchSearchRequest',
+        key: "fetchSearchRequest",
         value: function fetchSearchRequest() {
             var self = this;
             var url = _config.BASE_URL + '/search-data';
@@ -28408,38 +28425,30 @@ var SearchPage = function (_React$Component) {
             });
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'section',
-                { className: 'SearchPage' },
+                "section",
+                { className: "SearchPage" },
                 _react2.default.createElement(
-                    'header',
-                    { className: 'hero is-success is-bold' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'hero-body' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'container has-text-centered' },
-                            _react2.default.createElement(
-                                'h1',
-                                { className: 'title' },
-                                _react2.default.createElement(_Input2.default, { onSearchAction: this.fetchSearchRequest })
-                            )
-                        )
-                    )
+                    _Html.Hero,
+                    null,
+                    _react2.default.createElement(_Input2.default, { onSearchAction: this.fetchSearchRequest })
                 ),
                 _react2.default.createElement(
-                    'section',
-                    { className: 'section' },
+                    "section",
+                    { className: "section" },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'container' },
-                        _react2.default.createElement(_Result2.default, {
-                            searchResult: this.state.dataResponse,
-                            fetching: this.state.isFetching
-                        })
+                        "div",
+                        { className: "container" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "columns" },
+                            _react2.default.createElement(_Result2.default, {
+                                searchResult: this.state.dataResponse,
+                                fetching: this.state.isFetching
+                            })
+                        )
                     )
                 )
             );
@@ -28451,7 +28460,7 @@ var SearchPage = function (_React$Component) {
 
 exports.default = SearchPage;
 
-},{"../config":231,"./Input":228,"./Result":229,"axios":1,"react":219}],231:[function(require,module,exports){
+},{"../Common/Html":220,"../config":231,"./Input":228,"./Result":229,"axios":1,"react":219}],231:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

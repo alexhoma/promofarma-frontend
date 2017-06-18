@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * Common Html elements
  * - Title (h1, h2, h3, h4)
@@ -8,12 +10,46 @@ export const Hero = (props) => {
         <header className="hero is-success is-bold">
             <div className="hero-body">
                 <div className="container has-text-centered">
-                    <Title heading={'h1'}>
+                    <Title heading={'h1'} className={'title'}>
                         {props.children}
                     </Title>
                 </div>
             </div>
         </header>
+    )
+};
+
+export const ColumnsSection = (props) => {
+    return (
+        <section className="section">
+            <div className="container">
+                <div className="columns">
+                    {props.children}
+                </div>
+            </div>
+        </section>
+    )
+};
+
+export const Column = (props) => {
+    return (
+        <div className="column">
+            {props.children}
+        </div>
+    )
+};
+
+export const Box = (props) => {
+    return (
+        <div className="box">
+            <article className="media">
+                <div className="media-content">
+                    <div className="content">
+                        {props.children}
+                    </div>
+                </div>
+            </article>
+        </div>
     )
 };
 
