@@ -3,7 +3,8 @@
  * For global vars and constants
  */
 
-export const BASE_URL = 'http://demo7967671.mockable.io';
+// export const BASE_URL = 'http://demo7967671.mockable.io';
+export const BASE_URL = 'http://demo5102603.mockable.io/';
 
 export const modalCustomPageStyle = {
     overlay: {
