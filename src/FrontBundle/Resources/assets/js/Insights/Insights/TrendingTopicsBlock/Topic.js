@@ -1,5 +1,4 @@
 import React from 'react';
-import Trend from 'react-trend';
 import TopicDetail from "./TopicDetail";
 
 class Topic extends React.Component {
@@ -25,20 +24,10 @@ class Topic extends React.Component {
         return (
             <tr onClick={this.handleOpenModal}>
                 <td width="60%">
-                    <b>#{this.props.index + 1}</b> {this.props.trend.name}
+                    <b>{this.props.index + 1}</b> {this.props.topic.key}
                 </td>
-                <td>
-                    <Trend
-                        smooth
-                        autoDraw
-                        autoDrawDuration={2200}
-                        autoDrawEasing="ease-out"
-                        data={this.props.trend.data}
-                        gradient={['#09fb7b', '#0dbd30']}
-                        radius={17}
-                        strokeWidth={2.8}
-                        strokeLinecap={'round'}
-                    />
+                <td className="has-text-right">
+                    {this.props.topic.doc_count}
                 </td>
 
                 {/*Topic detailed evolution*/}

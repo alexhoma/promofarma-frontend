@@ -8,7 +8,7 @@ class TrendingTopics extends React.Component {
     }
 
     render() {
-        if (typeof this.props.data.trends === 'undefined') {
+        if (typeof this.props.data === 'undefined') {
             return false;
         }
 
@@ -18,10 +18,10 @@ class TrendingTopics extends React.Component {
                 <hr />
                 <table className="table is-narrow">
                     <tbody>
-                    {this.props.data.trends.map((trend, index) =>
+                    {this.props.data.map((topic, index) =>
                         <Topic
                             key={index}
-                            trend={trend}
+                            topic={topic}
                             index={index}
                         />
                     )}

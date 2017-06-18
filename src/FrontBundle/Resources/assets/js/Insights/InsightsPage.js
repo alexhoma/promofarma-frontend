@@ -31,20 +31,22 @@ class InsightsPage extends React.Component {
         const self = this;
 
         axios.all([
-            axios.get(BASE_URL + '/most-spoken-topics'),
-            axios.get(BASE_URL + '/most-rated-topics'),
-            axios.get(BASE_URL + '/latest-post')
+            axios.get(BASE_URL + '/mostSpokenTopicsOfMonth'),
+            axios.get(BASE_URL + '/mostRatedTopicsOfTheMonth'),
+            axios.get(BASE_URL + '/lastPost')
         ])
-            .then(axios.spread((mostSpokenTopicsResponse,
-                                mostRatedTopicsResponse,
-                                latestPostTopics) => {
-                self.setState({
-                    'isFetching': false,
-                    'mostSpokenTopics': mostSpokenTopicsResponse.data,
-                    'mostRatedTopics': mostRatedTopicsResponse.data,
-                    'latestPost': latestPostTopics.data
-                })
-            }));
+        .then(axios.spread((
+            mostSpokenTopicsResponse,
+            mostRatedTopicsResponse,
+            latestPostTopics) =>
+        {
+            self.setState({
+                'isFetching': false,
+                'mostSpokenTopics': mostSpokenTopicsResponse.data,
+                'mostRatedTopics': mostRatedTopicsResponse.data,
+                'latestPost': latestPostTopics.data
+            })
+        }));
     }
 
     componentDidMount() {

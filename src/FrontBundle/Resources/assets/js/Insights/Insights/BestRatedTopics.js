@@ -7,7 +7,7 @@ class BestRatedTopics extends React.Component {
     }
 
     render() {
-        if (typeof this.props.data.trends === 'undefined') {
+        if (typeof this.props.data === 'undefined') {
             return false;
         }
 
@@ -20,23 +20,16 @@ class BestRatedTopics extends React.Component {
                             <hr />
                             <table className="table is-narrow">
                                 <tbody>
-                                {this.props.data.trends.map((trend, index) =>
+                                {this.props.data.map((topic, index) =>
                                     <tr key={index}>
                                         <td width="60%">
-                                            <b>#{index + 1}</b> {trend.name}
+                                            <b>{index + 1}</b> {topic.key}
                                         </td>
-                                        <td>
-                                            <Trend
-                                                smooth
-                                                autoDraw
-                                                autoDrawDuration={2200}
-                                                autoDrawEasing="ease-out"
-                                                data={trend.data}
-                                                gradient={['#09fb7b', '#0dbd30']}
-                                                radius={17}
-                                                strokeWidth={2.8}
-                                                strokeLinecap={'round'}
-                                            />
+                                        <td className="has-text-right">
+                                            {topic.doc_count}
+                                        </td>
+                                        <td className="has-text-right">
+                                            {topic.score}
                                         </td>
                                     </tr>
                                 )}

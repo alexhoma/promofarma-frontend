@@ -58,7 +58,7 @@ export const Title = (props) => {
         ? props.className
         : '';
 
-    switch(props.heading) {
+    switch (props.heading) {
         case 'h1': {
             return <h1 className={htmlClassName}>{props.children}</h1>;
         }

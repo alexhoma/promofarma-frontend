@@ -1,22 +1,21 @@
 import React from 'react';
 import moment from 'moment';
+import {Box, Column, ColumnsSection} from "../../Common/Html";
 
 class LatestPost extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    fromUnixToRelativeTime(date) {
-        let datetime = moment
-            .unix(date)
-            .format("MM/DD/YYYY hh:mm:ss a");
-
-        return moment(datetime, "MM/DD/YYYY hh:mm:ss a").fromNow();
+    toRelativeTime(date) {
+        return moment(date).fromNow();
     }
 
     render() {
         const {
             content,
+            tags,
+            score,
             created_at,
             source
         } = this.props.data;
@@ -26,20 +25,31 @@ class LatestPost extends React.Component {
         }
 
         return (
-            <div className="box">
-                <article className="media">
-                    <div className="media-content">
-                        <div className="content">
-                            <strong>Latest Post</strong>
-                            <hr />
-                            <p>{content}</p>
-                            <small className="is-primary">
-                                {this.fromUnixToRelativeTime(created_at)} · </small>
-                            <small>Source: <a href="#">{source}</a></small>
-                        </div>
-                    </div>
-                </article>
-            </div>
+            <Box>
+                <strong>Latest Post</strong>
+                <hr />
+                <p>{content}</p>
+
+                <div className="columns">
+                    <Column>
+                        {tags.map((tag, index) =>
+                            <span key={index}
+                                  className="tag is-success is-small">
+                                {tag}
+                            </span>
+                        )}
+                    </Column>
+                    <Column>
+                        <span className="tag is-warning is-small is-pulled-right">
+                            Score <b> {score}</b>
+                        </span>
+                    </Column>
+                </div>
+
+                <small className="is-primary">
+                    {this.toRelativeTime(created_at.date)} · </small>
+                <small>Source: <a href="#">{source}</a></small>
+            </Box>
         );
     }
 }
