@@ -1,9 +1,12 @@
 import React from 'react';
-import MostSpokenTopicsList from "./MostSpokenTopicsList";
-import LatestPost from "./LatestPost";
-import MostRatedTopicsList from "./MostRatedTopicsList";
+
+import TrendingTopics from "./Insights/TrendingTopicsBlock/TrendingTopics";
+import LatestPost from "./Insights/LatestPost";
+import BestRatedTopics from "./Insights/BestRatedTopics";
+
 import axios from 'axios';
-import { BASE_URL } from "../config";
+import {BASE_URL} from "../config";
+
 
 class InsightsPage extends React.Component {
     constructor() {
@@ -14,7 +17,7 @@ class InsightsPage extends React.Component {
             mostSpokenTopics: [],
             mostRatedTopics: [],
             latestPost: {
-                'created_at':'',
+                'created_at': '',
                 'source': '',
                 'content': ''
             },
@@ -29,24 +32,22 @@ class InsightsPage extends React.Component {
             axios.get(BASE_URL + '/most-rated-topics'),
             axios.get(BASE_URL + '/latest-post')
         ])
-        .then(axios.spread( (
-            mostSpokenTopicsResponse,
-            mostRatedTopicsResponse,
-            latestPostTopics
-        ) => {
-            self.setState({
-                'isFetching': false,
-                'mostSpokenTopics': mostSpokenTopicsResponse.data,
-                'mostRatedTopics': mostRatedTopicsResponse.data,
-                'latestPost': latestPostTopics.data
-            })
-        }));
+            .then(axios.spread((mostSpokenTopicsResponse,
+                                mostRatedTopicsResponse,
+                                latestPostTopics) => {
+                self.setState({
+                    'isFetching': false,
+                    'mostSpokenTopics': mostSpokenTopicsResponse.data,
+                    'mostRatedTopics': mostRatedTopicsResponse.data,
+                    'latestPost': latestPostTopics.data
+                })
+            }));
     }
 
     componentDidMount() {
         this.fetchData();
         this.interval = setInterval(
-            () => this.fetchData(), 10000
+            () => this.fetchData(), 30000
         );
     }
 
@@ -72,7 +73,7 @@ class InsightsPage extends React.Component {
                         <div className="container">
                             <div className="columns">
                                 <div className="column">
-                                    <span className="spinner" />
+                                    <span className="spinner"/>
                                 </div>
                             </div>
                         </div>
@@ -83,20 +84,18 @@ class InsightsPage extends React.Component {
 
         return (
             <section className="InsightsPage">
-                {/*Hero with input on it*/}
                 {hero}
-
                 {/*Result section*/}
                 <section className="section">
                     <div className="container">
                         <div className="columns">
                             <div className="column">
-                                <MostSpokenTopicsList
+                                <TrendingTopics
                                     data={this.state.mostSpokenTopics}
                                 />
                             </div>
                             <div className="column">
-                                <MostRatedTopicsList
+                                <BestRatedTopics
                                     data={this.state.mostRatedTopics}
                                 />
                             </div>

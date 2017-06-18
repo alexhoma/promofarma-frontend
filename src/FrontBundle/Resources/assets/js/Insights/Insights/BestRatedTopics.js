@@ -1,7 +1,7 @@
 import React from 'react';
 import Trend from 'react-trend';
 
-class MostRatedTopicsList extends React.Component {
+class BestRatedTopics extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -54,4 +54,4 @@ class MostRatedTopicsList extends React.Component {
     }
 }
 
-export default MostRatedTopicsList;
+export default BestRatedTopics;
