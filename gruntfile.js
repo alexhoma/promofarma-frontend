@@ -58,15 +58,15 @@ module.exports = function (grunt) {
         watch: {
             scripts: {
                 files: ['src/FrontBundle/Resources/assets/js/**/*.js'],
-                tasks: ['browserify', 'uglify:build'],
+                tasks: ['browserify:dev'],
                 options: {
                     spawn: false,
                 }
-            },
-            sass: {
-                files: 'src/FrontBundle/Resources/assets/sass/**/*.{scss,sass}',
-                tasks: ['sass:dist', 'cssmin']
             }
+            // sass: {
+            //     files: 'src/FrontBundle/Resources/assets/sass/**/*.{scss,sass}',
+            //     tasks: ['sass:dist', 'cssmin']
+            // }
         }
 
     });
