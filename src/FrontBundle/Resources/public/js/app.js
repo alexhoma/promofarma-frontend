@@ -28436,20 +28436,12 @@ var SearchPage = function (_React$Component) {
                     _react2.default.createElement(_Input2.default, { onSearchAction: this.fetchSearchRequest })
                 ),
                 _react2.default.createElement(
-                    "section",
-                    { className: "section" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "container" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "columns" },
-                            _react2.default.createElement(_Result2.default, {
-                                searchResult: this.state.dataResponse,
-                                fetching: this.state.isFetching
-                            })
-                        )
-                    )
+                    _Html.ColumnsSection,
+                    null,
+                    _react2.default.createElement(_Result2.default, {
+                        searchResult: this.state.dataResponse,
+                        fetching: this.state.isFetching
+                    })
                 )
             );
         }
