@@ -4,8 +4,8 @@
  */
 
 // export const BASE_URL = 'http://demo7967671.mockable.io';
-export const BASE_URL = 'http://demo5102603.mockable.io/';
-// export const BASE_URL = '176.34.149.205';
+// export const BASE_URL = 'http://demo5102603.mockable.io/';
+export const BASE_URL = 'http://176.34.149.205/app.php';
 
 export const modalCustomPageStyle = {
     overlay: {
