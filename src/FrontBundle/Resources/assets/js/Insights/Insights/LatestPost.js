@@ -30,7 +30,7 @@ class LatestPost extends React.Component {
                     Latest post
                 </Title>
 
-                <p>{content}</p>
+                <p>{JSON.parse(content)}</p>
 
                 <div className="columns">
                     <Column>
