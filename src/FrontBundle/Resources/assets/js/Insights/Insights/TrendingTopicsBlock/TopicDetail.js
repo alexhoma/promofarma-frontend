@@ -8,6 +8,7 @@ import {BASE_URL, modalCustomPageStyle} from '../../../config';
 class TopicDetail extends React.Component {
     constructor(props) {
         super(props);
+
         this.fetchData = this.fetchData.bind(this);
         this.buildLabels = this.buildLabels.bind(this);
         this.buildChartData = this.buildChartData.bind(this);

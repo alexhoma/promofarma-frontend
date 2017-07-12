@@ -9,10 +9,8 @@ class Result extends React.Component {
 
     buildLabels() {
         let labels = [];
-        this.props.searchResult.evolution_searched_word.data_chart.forEach(
-            (value) => {
-                labels.push('');
-            }
+        this.props.searchResult.evolution_searched_word.data_chart.dates.forEach(
+            (value) => labels.push(value)
         );
 
         return labels;
@@ -39,7 +37,7 @@ class Result extends React.Component {
 
         const {
             searched_word,
-            number_searched_word,
+            searched_word_occurrences,
             evolution_searched_word
         } = this.props.searchResult;
 
@@ -50,7 +48,7 @@ class Result extends React.Component {
                 label: '',
                 fill: false,
                 borderColor: '#23d160',
-                data: evolution_searched_word.data_chart
+                data: evolution_searched_word.data_chart.values
             }]
         };
 
@@ -63,7 +61,7 @@ class Result extends React.Component {
                     >
                         #{searched_word}
                         <span className="tag is-info is-small is-pulled-right">
-                            Searched times {number_searched_word}
+                            {searched_word_occurrences} occurrences
                         </span>
                     </Title>
 
