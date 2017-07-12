@@ -32,8 +32,8 @@ class InsightsPage extends React.Component {
 
         axios.all([
             axios.get(BASE_URL + '/mostSpokenTopicsOfMonth'),
-            axios.get(BASE_URL + '/mostRatedTopicsOfTheMonth')
-            // axios.get(BASE_URL + '/lastPost')
+            axios.get(BASE_URL + '/mostRatedTopicsOfTheMonth'),
+            axios.get(BASE_URL + '/lastPost')
         ], {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -42,15 +42,15 @@ class InsightsPage extends React.Component {
         })
         .then(axios.spread((
             mostSpokenTopicsResponse,
-            mostRatedTopicsResponse
-            /*latestPostTopics*/) =>
+            mostRatedTopicsResponse,
+            latestPostTopics) =>
         {
 
             self.setState({
                 'isFetching': false,
                 'mostSpokenTopics': mostSpokenTopicsResponse.data,
-                'mostRatedTopics': mostRatedTopicsResponse.data
-                // 'latestPost': latestPostTopics.data
+                'mostRatedTopics': mostRatedTopicsResponse.data,
+                'latestPost': latestPostTopics.data
             })
         }));
     }

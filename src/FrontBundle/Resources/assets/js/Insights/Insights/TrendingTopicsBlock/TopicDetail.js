@@ -10,6 +10,7 @@ class TopicDetail extends React.Component {
         super(props);
         this.fetchData = this.fetchData.bind(this);
         this.buildLabels = this.buildLabels.bind(this);
+        this.buildChartData = this.buildChartData.bind(this);
         this.state = {
             isFetching: true,
             dataResponse: {
@@ -36,14 +37,24 @@ class TopicDetail extends React.Component {
     }
 
     buildLabels() {
+        if (this.state.dataResponse.data_chart.length === 0) {
+            return false;
+        }
+
         let labels = [];
-        this.state.dataResponse.data_chart.forEach(
-            (value) => {
-                labels.push('');
-            }
+        this.state.dataResponse.data_chart.dates.forEach(
+            (value) => labels.push(value)
         );
 
         return labels;
+    }
+
+    buildChartData() {
+        if (this.state.dataResponse.data_chart.length === 0) {
+            return false;
+        }
+
+        return this.state.dataResponse.data_chart.values;
     }
 
     render() {
@@ -54,7 +65,7 @@ class TopicDetail extends React.Component {
                 label: '',
                 fill: false,
                 borderColor: '#23d160',
-                data: this.state.dataResponse.data_chart
+                data: this.buildChartData()
             }]
         };
 

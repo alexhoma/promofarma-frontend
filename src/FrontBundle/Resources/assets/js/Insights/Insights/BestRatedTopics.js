@@ -12,6 +12,8 @@ class BestRatedTopics extends React.Component {
             return false;
         }
 
+        // console.log(this.props.data);return false;
+
         return (
             <Box className="BestRatedTopics">
                 <Title heading={'strong'}>
