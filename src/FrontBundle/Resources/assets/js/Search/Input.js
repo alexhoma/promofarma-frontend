@@ -13,7 +13,7 @@ class Input extends React.Component {
         const self = this;
 
         this.setState({
-            value: e.target.value
+            requestValue: e.target.value
         }, function() {
             self.performSearch();
         });

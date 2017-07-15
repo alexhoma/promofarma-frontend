@@ -43062,6 +43062,8 @@ var BestRatedTopics = function (_React$Component) {
                 return false;
             }
 
+            // console.log(this.props.data);return false;
+
             return _react2.default.createElement(
                 _Html.Box,
                 { className: "BestRatedTopics" },
@@ -43195,7 +43197,7 @@ var LatestPost = function (_React$Component) {
                 _react2.default.createElement(
                     'p',
                     null,
-                    content
+                    JSON.parse(content)
                 ),
                 _react2.default.createElement(
                     'div',
@@ -43385,6 +43387,7 @@ var TopicDetail = function (_React$Component) {
 
         _this.fetchData = _this.fetchData.bind(_this);
         _this.buildLabels = _this.buildLabels.bind(_this);
+        _this.buildChartData = _this.buildChartData.bind(_this);
         _this.state = {
             isFetching: true,
             dataResponse: {
@@ -43415,12 +43418,25 @@ var TopicDetail = function (_React$Component) {
     }, {
         key: 'buildLabels',
         value: function buildLabels() {
+            if (this.state.dataResponse.data_chart.length === 0) {
+                return false;
+            }
+
             var labels = [];
-            this.state.dataResponse.data_chart.forEach(function (value) {
-                labels.push('');
+            this.state.dataResponse.data_chart.dates.forEach(function (value) {
+                return labels.push(value);
             });
 
             return labels;
+        }
+    }, {
+        key: 'buildChartData',
+        value: function buildChartData() {
+            if (this.state.dataResponse.data_chart.length === 0) {
+                return false;
+            }
+
+            return this.state.dataResponse.data_chart.values;
         }
     }, {
         key: 'render',
@@ -43432,7 +43448,7 @@ var TopicDetail = function (_React$Component) {
                     label: '',
                     fill: false,
                     borderColor: '#23d160',
-                    data: this.state.dataResponse.data_chart
+                    data: this.buildChartData()
                 }]
             };
 
@@ -43643,7 +43659,13 @@ var InsightsPage = function (_React$Component) {
         value: function fetchData() {
             var self = this;
 
-            _axios2.default.all([_axios2.default.get(_config.BASE_URL + '/mostSpokenTopicsOfMonth'), _axios2.default.get(_config.BASE_URL + '/mostRatedTopicsOfTheMonth'), _axios2.default.get(_config.BASE_URL + '/lastPost')]).then(_axios2.default.spread(function (mostSpokenTopicsResponse, mostRatedTopicsResponse, latestPostTopics) {
+            _axios2.default.all([_axios2.default.get(_config.BASE_URL + '/mostSpokenTopicsOfMonth'), _axios2.default.get(_config.BASE_URL + '/mostRatedTopicsOfTheMonth'), _axios2.default.get(_config.BASE_URL + '/lastPost')], {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'text/json'
+                }
+            }).then(_axios2.default.spread(function (mostSpokenTopicsResponse, mostRatedTopicsResponse, latestPostTopics) {
+
                 self.setState({
                     'isFetching': false,
                     'mostSpokenTopics': mostSpokenTopicsResponse.data,
@@ -43884,8 +43906,8 @@ var Result = function (_React$Component) {
         key: "buildLabels",
         value: function buildLabels() {
             var labels = [];
-            this.props.searchResult.evolution_searched_word.data_chart.forEach(function (value) {
-                labels.push('');
+            this.props.searchResult.evolution_searched_word.data_chart.dates.forEach(function (value) {
+                return labels.push(value);
             });
 
             return labels;
@@ -43919,7 +43941,7 @@ var Result = function (_React$Component) {
 
             var _props$searchResult = this.props.searchResult,
                 searched_word = _props$searchResult.searched_word,
-                number_searched_word = _props$searchResult.number_searched_word,
+                searched_word_occurrences = _props$searchResult.searched_word_occurrences,
                 evolution_searched_word = _props$searchResult.evolution_searched_word;
 
 
@@ -43930,7 +43952,7 @@ var Result = function (_React$Component) {
                     label: '',
                     fill: false,
                     borderColor: '#23d160',
-                    data: evolution_searched_word.data_chart
+                    data: evolution_searched_word.data_chart.values
                 }]
             };
 
@@ -43951,8 +43973,8 @@ var Result = function (_React$Component) {
                         _react2.default.createElement(
                             "span",
                             { className: "tag is-info is-small is-pulled-right" },
-                            "Searched times ",
-                            number_searched_word
+                            searched_word_occurrences,
+                            " occurrences"
                         )
                     ),
                     _react2.default.createElement(_reactChartjs.Line, {
@@ -44077,8 +44099,8 @@ Object.defineProperty(exports, "__esModule", {
  */
 
 // export const BASE_URL = 'http://demo7967671.mockable.io';
-var BASE_URL = exports.BASE_URL = 'http://demo5102603.mockable.io/';
-// export const BASE_URL = '176.34.149.205';
+// export const BASE_URL = 'http://demo5102603.mockable.io/';
+var BASE_URL = exports.BASE_URL = 'http://176.34.149.205/app.php';
 
 var modalCustomPageStyle = exports.modalCustomPageStyle = {
     overlay: {

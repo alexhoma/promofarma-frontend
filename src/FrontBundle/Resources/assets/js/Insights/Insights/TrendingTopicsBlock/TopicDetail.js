@@ -29,7 +29,8 @@ class TopicDetail extends React.Component {
         const self = this;
         const url = BASE_URL + '/evolutionMostSpokenTopic';
 
-        axios.get(url).then(function(response) {
+        axios.get(url + '?topic_key=' + 'london')
+            .then(function (response) {
             self.setState({
                 dataResponse: response.data,
                 isFetching: false

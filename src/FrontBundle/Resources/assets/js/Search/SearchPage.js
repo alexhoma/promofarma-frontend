@@ -18,19 +18,21 @@ class SearchPage extends React.Component {
         };
     }
 
-    fetchSearchRequest() {
+    fetchSearchRequest(requestValue) {
         const self = this;
         const url = BASE_URL + '/searchInPosts';
         self.setState({
             isFetching: true
         });
 
-        axios.get(url).then(function(response) {
-            self.setState({
-                dataResponse: response.data,
-                isFetching: false
-            });
-        });
+        axios.get(url + '?searched_word=' + requestValue)
+            .then(function(response) {
+                self.setState({
+                    dataResponse: response.data,
+                    isFetching: false
+                });
+            }
+        );
     }
 
     render() {

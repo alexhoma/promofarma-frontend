@@ -63,10 +63,10 @@ module.exports = function (grunt) {
                     spawn: false,
                 }
             },
-            // sass: {
-            //     files: 'src/FrontBundle/Resources/assets/sass/**/*.{scss,sass}',
-            //     tasks: ['sass:dist', 'cssmin']
-            // }
+            sass: {
+                files: 'src/FrontBundle/Resources/assets/sass/**/*.{scss,sass}',
+                tasks: ['sass:dist', 'cssmin']
+            }
         }
 
     });
