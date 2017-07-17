@@ -12,6 +12,17 @@ class BestRatedTopics extends React.Component {
             return false;
         }
 
+        /**
+         * @todo: hardcoded
+         */
+        let dataProps = this.props.data;
+        let data = [];
+        if (typeof dataProps === 'object') {
+            data.push(dataProps);
+        } else {
+            data = dataProps;
+        }
+
         return (
             <Box className="BestRatedTopics">
                 <Title heading={'strong'}>
@@ -23,7 +34,7 @@ class BestRatedTopics extends React.Component {
 
                 <table className="table">
                     <tbody>
-                    {this.props.data.map((topic, index) =>
+                    {data.map((topic, index) =>
                         <tr key={index}>
                             <td width="60%">
                                 <b>{index + 1}</b> {topic.key}

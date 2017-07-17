@@ -35,10 +35,12 @@ class LatestPost extends React.Component {
                 <div className="columns">
                     <Column>
                         {tags.map((tag, index) =>
-                            <span key={index}
-                                  className="tag is-success is-small">
-                                {tag}
-                            </span>
+                            (index < 3) ? (
+                                <span key={index}
+                                      className="tag is-success is-small">
+                                    {tag}
+                                </span>
+                            ) : ('')
                         )}
                     </Column>
                     <Column>
