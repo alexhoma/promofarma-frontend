@@ -5,6 +5,10 @@ import moment from "moment";
 class BestRatedTopics extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            showAll: false
+        }
     }
 
     render() {
@@ -34,24 +38,52 @@ class BestRatedTopics extends React.Component {
 
                 <table className="table">
                     <tbody>
-                    {data.map((topic, index) =>
-                        <tr key={index}>
-                            <td width="60%">
-                                <b>{index + 1}</b> {topic.key}
-                            </td>
-                            <td className="has-text-right">
-                                {topic.doc_count}
-                            </td>
-                            <td className="has-text-right">
-                                {topic.score}
-                            </td>
-                        </tr>
-                    )}
+                    {(this.state.showAll === false)
+                        ? (
+                            data.map((topic, index) =>
+                                (index < 5) ? (
+                                    <tr key={index}>
+                                        <td width="60%">
+                                            <b>{index + 1}</b> {topic.key}
+                                        </td>
+                                        <td className="has-text-right">
+                                            {topic.doc_count}
+                                        </td>
+                                        <td className="has-text-right">
+                                            {topic.score}
+                                        </td>
+                                    </tr>
+                                ) : ('')
+                            )
+                        )
+                        : (
+                            data.map((topic, index) =>
+                                <tr key={index}>
+                                    <td width="60%">
+                                        <b>{index + 1}</b> {topic.key}
+                                    </td>
+                                    <td className="has-text-right">
+                                        {topic.doc_count}
+                                    </td>
+                                    <td className="has-text-right">
+                                        {topic.score}
+                                    </td>
+                                </tr>
+                            )
+                        )
+                    }
                     </tbody>
                 </table>
 
                 <div className="has-text-centered">
-                    <a href="#">Show all</a>
+                    {(this.state.showAll !== true)
+                        ? (
+                            <a onClick={() => this.setState({
+                                showAll: true
+                            })}>Show all</a>
+                        )
+                        : ('')
+                    }
                 </div>
             </Box>
         );

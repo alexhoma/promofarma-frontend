@@ -6,6 +6,10 @@ import moment from "moment";
 class TrendingTopics extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            showAll: false
+        }
     }
 
     render() {
@@ -24,18 +28,40 @@ class TrendingTopics extends React.Component {
 
                 <table className="table">
                     <tbody>
-                    {this.props.data.map((topic, index) =>
-                        <Topic
-                            key={index}
-                            topic={topic}
-                            index={index}
-                        />
-                    )}
+                    {(this.state.showAll === false)
+                        ? (
+                            this.props.data.map((topic, index) =>
+                                (index < 5) ? (
+                                    <Topic
+                                        key={index}
+                                        topic={topic}
+                                        index={index}
+                                    />
+                                ) : ('')
+                            )
+                        )
+                        : (
+                            this.props.data.map((topic, index) =>
+                                <Topic
+                                    key={index}
+                                    topic={topic}
+                                    index={index}
+                                />
+                            )
+                        )
+                    }
                     </tbody>
                 </table>
 
                 <div className="has-text-centered">
-                    <a href="#">Show all</a>
+                    {(this.state.showAll !== true)
+                        ? (
+                            <a onClick={() => this.setState({
+                                showAll: true
+                            })}>Show all</a>
+                        )
+                        : ('')
+                    }
                 </div>
             </Box>
         );
