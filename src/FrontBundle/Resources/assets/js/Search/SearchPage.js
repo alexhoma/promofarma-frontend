@@ -14,6 +14,7 @@ class SearchPage extends React.Component {
         this.fetchSearchRequest = this.fetchSearchRequest.bind(this);
         this.state = {
             isFetching: false,
+            emptyResult: true,
             dataResponse: ''
         };
     }
@@ -22,7 +23,8 @@ class SearchPage extends React.Component {
         const self = this;
         const url = BASE_URL + '/searchInPosts';
         self.setState({
-            isFetching: true
+            isFetching: true,
+            emptyResult: false
         });
 
         axios.get(url + '?searched_word=' + requestValue)
@@ -46,6 +48,7 @@ class SearchPage extends React.Component {
                     <Result
                         searchResult={this.state.dataResponse}
                         fetching={this.state.isFetching}
+                        emptyResult={this.state.emptyResult}
                     />
                 </ColumnsSection>
             </section>

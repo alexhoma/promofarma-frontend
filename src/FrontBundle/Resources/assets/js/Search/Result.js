@@ -25,7 +25,7 @@ class Result extends React.Component {
             );
         }
 
-        if (this.props.searchResult === '') {
+        if (this.props.emptyResult === true) {
             return (
                 <Column>
                     <Box>
