@@ -5,24 +5,33 @@ class Topic extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            showModal: false
+            showModal: false,
+            requested_topic_key: ''
         };
 
         this.handleOpenModal = this.handleOpenModal.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
     }
 
-    handleOpenModal() {
-        this.setState({ showModal: true });
+    handleOpenModal(key) {
+        console.log(key);
+        this.setState({
+            showModal: true,
+            requested_topic_key: key
+        });
     }
 
     handleCloseModal() {
-        this.setState({ showModal: false });
+        this.setState({
+            showModal: false,
+            requested_topic_key: ''
+        });
     }
 
     render() {
         return (
-            <tr onClick={this.handleOpenModal}>
+            <tr onClick={() => this.handleOpenModal(this.props.topic.key)}
+                data-key={this.props.topic.key}>
                 <td width="60%">
                     <b>{this.props.index + 1}</b> {this.props.topic.key}
                 </td>
@@ -32,6 +41,7 @@ class Topic extends React.Component {
 
                 {/*Topic detailed evolution*/}
                 <TopicDetail
+                    requestedTopic={this.state.requested_topic_key}
                     onCloseModal={this.handleCloseModal}
                     modalState={this.state.showModal}
                 />

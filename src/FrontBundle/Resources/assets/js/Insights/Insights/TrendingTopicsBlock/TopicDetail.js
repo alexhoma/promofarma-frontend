@@ -29,7 +29,7 @@ class TopicDetail extends React.Component {
         const self = this;
         const url = BASE_URL + '/evolutionMostSpokenTopic';
 
-        axios.get(url + '?topic_key=' + 'london')
+        axios.get(url + '?topic_key=' + this.props.requestedTopic)
             .then(function (response) {
             self.setState({
                 dataResponse: response.data,
