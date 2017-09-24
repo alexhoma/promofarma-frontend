@@ -37,7 +37,7 @@ class TrendingTopics extends React.Component {
                                         topic={topic}
                                         index={index}
                                     />
-                                ) : ('')
+                                ) : null
                             )
                         )
                         : (
@@ -60,7 +60,7 @@ class TrendingTopics extends React.Component {
                                 showAll: true
                             })}>Show all</a>
                         )
-                        : ('')
+                        : ''
                     }
                 </div>
             </Box>

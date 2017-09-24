@@ -31,14 +31,14 @@ class Topic extends React.Component {
     render() {
         return (
             <tr onClick={() => this.handleOpenModal(this.props.topic.key)}
-                data-key={this.props.topic.key}>
+                data-key={this.props.topic.key}
+            >
                 <td width="60%">
                     <b>{this.props.index + 1}</b> {this.props.topic.key}
                 </td>
                 <td className="has-text-right">
                     {this.props.topic.doc_count}
                 </td>
-
                 {/*Topic detailed evolution*/}
                 <TopicDetail
                     requestedTopic={this.state.requested_topic_key}

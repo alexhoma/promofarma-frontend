@@ -16,16 +16,17 @@ class BestRatedTopics extends React.Component {
             return false;
         }
 
+        console.log(this.props.data)
         /**
          * @todo: hardcoded
          */
         let dataProps = this.props.data;
-        let data = [];
-        if (typeof dataProps === 'object') {
-            data.push(dataProps);
-        } else {
-            data = dataProps;
-        }
+        // let data = [];
+        // if (typeof dataProps === 'object') {
+        //     data.push(dataProps);
+        // } else {
+        //     data = dataProps;
+        // }
 
         return (
             <Box className="BestRatedTopics">
@@ -40,24 +41,24 @@ class BestRatedTopics extends React.Component {
                     <tbody>
                     {(this.state.showAll === false)
                         ? (
-                            data.map((topic, index) =>
+                            dataProps.map((topic, index) =>
                                 (index < 5) ? (
                                     <tr key={index}>
                                         <td width="60%">
                                             <b>{index + 1}</b> {topic.key}
                                         </td>
-                                        <td className="has-text-right">
-                                            {topic.doc_count}
-                                        </td>
+                                        {/*<td className="has-text-right">*/}
+                                            {/*{topic.doc_count}*/}
+                                        {/*</td>*/}
                                         <td className="has-text-right">
                                             {topic.score}
                                         </td>
                                     </tr>
-                                ) : ('')
+                                ) : null
                             )
                         )
                         : (
-                            data.map((topic, index) =>
+                            dataProps.map((topic, index) =>
                                 <tr key={index}>
                                     <td width="60%">
                                         <b>{index + 1}</b> {topic.key}
@@ -82,7 +83,7 @@ class BestRatedTopics extends React.Component {
                                 showAll: true
                             })}>Show all</a>
                         )
-                        : ('')
+                        : null
                     }
                 </div>
             </Box>

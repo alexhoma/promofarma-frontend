@@ -58,7 +58,7 @@ class InsightsPage extends React.Component {
     componentDidMount() {
         this.fetchData();
         this.interval = setInterval(
-            () => this.fetchData(), 30000
+            () => this.fetchData(), 10000
         );
     }
 
