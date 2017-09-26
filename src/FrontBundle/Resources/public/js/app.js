@@ -43052,17 +43052,33 @@ var BestRatedTopics = function (_React$Component) {
     function BestRatedTopics(props) {
         _classCallCheck(this, BestRatedTopics);
 
-        return _possibleConstructorReturn(this, (BestRatedTopics.__proto__ || Object.getPrototypeOf(BestRatedTopics)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (BestRatedTopics.__proto__ || Object.getPrototypeOf(BestRatedTopics)).call(this, props));
+
+        _this.state = {
+            showAll: false
+        };
+        return _this;
     }
 
     _createClass(BestRatedTopics, [{
         key: "render",
         value: function render() {
+            var _this2 = this;
+
             if (typeof this.props.data === 'undefined') {
                 return false;
             }
 
-            // console.log(this.props.data);return false;
+            /**
+             * @todo: hardcoded
+             */
+            var dataProps = this.props.data;
+            // let data = [];
+            // if (typeof dataProps === 'object') {
+            //     data.push(dataProps);
+            // } else {
+            //     data = dataProps;
+            // }
 
             return _react2.default.createElement(
                 _Html.Box,
@@ -43083,7 +43099,23 @@ var BestRatedTopics = function (_React$Component) {
                     _react2.default.createElement(
                         "tbody",
                         null,
-                        this.props.data.map(function (topic, index) {
+                        this.state.showAll === false ? dataProps.map(function (topic, index) {
+                            return index < 5 ? _react2.default.createElement(
+                                "tr",
+                                { key: index },
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    _react2.default.createElement(
+                                        "b",
+                                        null,
+                                        index + 1
+                                    ),
+                                    " ",
+                                    topic.key
+                                )
+                            ) : null;
+                        }) : dataProps.map(function (topic, index) {
                             return _react2.default.createElement(
                                 "tr",
                                 { key: index },
@@ -43115,11 +43147,15 @@ var BestRatedTopics = function (_React$Component) {
                 _react2.default.createElement(
                     "div",
                     { className: "has-text-centered" },
-                    _react2.default.createElement(
+                    this.state.showAll !== true ? _react2.default.createElement(
                         "a",
-                        { href: "#" },
+                        { onClick: function onClick() {
+                                return _this2.setState({
+                                    showAll: true
+                                });
+                            } },
                         "Show all"
-                    )
+                    ) : null
                 )
             );
         }
@@ -43206,12 +43242,12 @@ var LatestPost = function (_React$Component) {
                         _Html.Column,
                         null,
                         tags.map(function (tag, index) {
-                            return _react2.default.createElement(
+                            return index < 3 ? _react2.default.createElement(
                                 'span',
                                 { key: index,
                                     className: 'tag is-success is-small' },
                                 tag
-                            );
+                            ) : '';
                         })
                     ),
                     _react2.default.createElement(
@@ -43256,7 +43292,7 @@ var LatestPost = function (_React$Component) {
 exports.default = LatestPost;
 
 },{"../../Common/Html":272,"moment":101,"react":271}],275:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -43264,11 +43300,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _TopicDetail = require("./TopicDetail");
+var _TopicDetail = require('./TopicDetail');
 
 var _TopicDetail2 = _interopRequireDefault(_TopicDetail);
 
@@ -43289,7 +43325,8 @@ var Topic = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Topic.__proto__ || Object.getPrototypeOf(Topic)).call(this, props));
 
         _this.state = {
-            showModal: false
+            showModal: false,
+            requested_topic_key: ''
         };
 
         _this.handleOpenModal = _this.handleOpenModal.bind(_this);
@@ -43298,38 +43335,52 @@ var Topic = function (_React$Component) {
     }
 
     _createClass(Topic, [{
-        key: "handleOpenModal",
-        value: function handleOpenModal() {
-            this.setState({ showModal: true });
+        key: 'handleOpenModal',
+        value: function handleOpenModal(key) {
+            console.log(key);
+            this.setState({
+                showModal: true,
+                requested_topic_key: key
+            });
         }
     }, {
-        key: "handleCloseModal",
+        key: 'handleCloseModal',
         value: function handleCloseModal() {
-            this.setState({ showModal: false });
+            this.setState({
+                showModal: false,
+                requested_topic_key: ''
+            });
         }
     }, {
-        key: "render",
+        key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return _react2.default.createElement(
-                "tr",
-                { onClick: this.handleOpenModal },
+                'tr',
+                { onClick: function onClick() {
+                        return _this2.handleOpenModal(_this2.props.topic.key);
+                    },
+                    'data-key': this.props.topic.key
+                },
                 _react2.default.createElement(
-                    "td",
-                    { width: "60%" },
+                    'td',
+                    { width: '60%' },
                     _react2.default.createElement(
-                        "b",
+                        'b',
                         null,
                         this.props.index + 1
                     ),
-                    " ",
+                    ' ',
                     this.props.topic.key
                 ),
                 _react2.default.createElement(
-                    "td",
-                    { className: "has-text-right" },
+                    'td',
+                    { className: 'has-text-right' },
                     this.props.topic.doc_count
                 ),
                 _react2.default.createElement(_TopicDetail2.default, {
+                    requestedTopic: this.state.requested_topic_key,
                     onCloseModal: this.handleCloseModal,
                     modalState: this.state.showModal
                 })
@@ -43408,7 +43459,7 @@ var TopicDetail = function (_React$Component) {
             var self = this;
             var url = _config.BASE_URL + '/evolutionMostSpokenTopic';
 
-            _axios2.default.get(url).then(function (response) {
+            _axios2.default.get(url + '?topic_key=' + this.props.requestedTopic).then(function (response) {
                 self.setState({
                     dataResponse: response.data,
                     isFetching: false
@@ -43535,12 +43586,19 @@ var TrendingTopics = function (_React$Component) {
     function TrendingTopics(props) {
         _classCallCheck(this, TrendingTopics);
 
-        return _possibleConstructorReturn(this, (TrendingTopics.__proto__ || Object.getPrototypeOf(TrendingTopics)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (TrendingTopics.__proto__ || Object.getPrototypeOf(TrendingTopics)).call(this, props));
+
+        _this.state = {
+            showAll: false
+        };
+        return _this;
     }
 
     _createClass(TrendingTopics, [{
         key: "render",
         value: function render() {
+            var _this2 = this;
+
             if (typeof this.props.data === 'undefined') {
                 return false;
             }
@@ -43564,7 +43622,13 @@ var TrendingTopics = function (_React$Component) {
                     _react2.default.createElement(
                         "tbody",
                         null,
-                        this.props.data.map(function (topic, index) {
+                        this.state.showAll === false ? this.props.data.map(function (topic, index) {
+                            return index < 5 ? _react2.default.createElement(_Topic2.default, {
+                                key: index,
+                                topic: topic,
+                                index: index
+                            }) : null;
+                        }) : this.props.data.map(function (topic, index) {
                             return _react2.default.createElement(_Topic2.default, {
                                 key: index,
                                 topic: topic,
@@ -43576,11 +43640,15 @@ var TrendingTopics = function (_React$Component) {
                 _react2.default.createElement(
                     "div",
                     { className: "has-text-centered" },
-                    _react2.default.createElement(
+                    this.state.showAll !== true ? _react2.default.createElement(
                         "a",
-                        { href: "#" },
+                        { onClick: function onClick() {
+                                return _this2.setState({
+                                    showAll: true
+                                });
+                            } },
                         "Show all"
-                    )
+                    ) : ''
                 )
             );
         }
@@ -43682,7 +43750,7 @@ var InsightsPage = function (_React$Component) {
             this.fetchData();
             this.interval = setInterval(function () {
                 return _this2.fetchData();
-            }, 30000);
+            }, 10000);
         }
     }, {
         key: "render",
@@ -43829,7 +43897,7 @@ var Input = function (_React$Component) {
             var self = this;
 
             this.setState({
-                value: e.target.value
+                requestValue: e.target.value
             }, function () {
                 self.performSearch();
             });
@@ -43923,7 +43991,7 @@ var Result = function (_React$Component) {
                 );
             }
 
-            if (this.props.searchResult === '') {
+            if (this.props.emptyResult === true) {
                 return _react2.default.createElement(
                     _Html.Column,
                     null,
@@ -44038,6 +44106,7 @@ var SearchPage = function (_React$Component) {
         _this.fetchSearchRequest = _this.fetchSearchRequest.bind(_this);
         _this.state = {
             isFetching: false,
+            emptyResult: true,
             dataResponse: ''
         };
         return _this;
@@ -44045,14 +44114,15 @@ var SearchPage = function (_React$Component) {
 
     _createClass(SearchPage, [{
         key: "fetchSearchRequest",
-        value: function fetchSearchRequest() {
+        value: function fetchSearchRequest(requestValue) {
             var self = this;
             var url = _config.BASE_URL + '/searchInPosts';
             self.setState({
-                isFetching: true
+                isFetching: true,
+                emptyResult: false
             });
 
-            _axios2.default.get(url).then(function (response) {
+            _axios2.default.get(url + '?searched_word=' + requestValue).then(function (response) {
                 self.setState({
                     dataResponse: response.data,
                     isFetching: false
@@ -44075,7 +44145,8 @@ var SearchPage = function (_React$Component) {
                     null,
                     _react2.default.createElement(_Result2.default, {
                         searchResult: this.state.dataResponse,
-                        fetching: this.state.isFetching
+                        fetching: this.state.isFetching,
+                        emptyResult: this.state.emptyResult
                     })
                 )
             );
@@ -44100,7 +44171,7 @@ Object.defineProperty(exports, "__esModule", {
 
 // export const BASE_URL = 'http://demo7967671.mockable.io';
 // export const BASE_URL = 'http://demo5102603.mockable.io/';
-var BASE_URL = exports.BASE_URL = 'http://176.34.149.205/app.php';
+var BASE_URL = exports.BASE_URL = 'http://54.154.42.187/app.php';
 
 var modalCustomPageStyle = exports.modalCustomPageStyle = {
     overlay: {

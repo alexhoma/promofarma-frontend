@@ -16,7 +16,6 @@ class BestRatedTopics extends React.Component {
             return false;
         }
 
-        console.log(this.props.data)
         /**
          * @todo: hardcoded
          */
@@ -44,15 +43,15 @@ class BestRatedTopics extends React.Component {
                             dataProps.map((topic, index) =>
                                 (index < 5) ? (
                                     <tr key={index}>
-                                        <td width="60%">
+                                        <td>
                                             <b>{index + 1}</b> {topic.key}
                                         </td>
                                         {/*<td className="has-text-right">*/}
                                             {/*{topic.doc_count}*/}
                                         {/*</td>*/}
-                                        <td className="has-text-right">
-                                            {topic.score}
-                                        </td>
+                                        {/*<td className="has-text-right">*/}
+                                            {/*{topic.score}*/}
+                                        {/*</td>*/}
                                     </tr>
                                 ) : null
                             )
